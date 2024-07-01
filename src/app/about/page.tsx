@@ -10,13 +10,13 @@ export default function AboutPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Our Story</h2>
         <p className="mb-4">
-          Welcome to KPPower Electrical Services. Founded in 20XX, we have
-          been providing top-quality electrical solutions for residential and
+          Welcome to KPPower Electrical Services. Founded in 2022, we have been
+          providing top-quality electrical solutions for residential and
           commercial clients in Tucson, Arizona and surrounding areas within a
           50-mile radius.
         </p>
         <p className="mb-4">
-          Our owner, Kyle, brings XX years of experience to every project. His
+          Our owner, Kyle, brings 10 years of experience to every project. His
           passion for electrical work and commitment to customer satisfaction
           are the driving forces behind our company's success.
         </p>
@@ -36,8 +36,8 @@ export default function AboutPage() {
         <h2 className="text-2xl font-semibold mb-2">Our Service Area</h2>
         <p className="mb-4">
           Based in Tucson, AZ, we proudly serve customers within a 50-mile
-          radius. This includes [list a few major areas or cities within the
-          radius].
+          radius. This includes Oro Valley, Marana, Sahuarita, Green Valley, and
+          other surrounding communities.
         </p>
         <p className="mb-4">
           Need service outside our standard area? Contact us for a custom quote
