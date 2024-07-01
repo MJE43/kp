@@ -42,17 +42,25 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 15+ Years Experience
               </h3>
-              <p className="text-gray-700">Serving Phoenix with quality electrical work since 2009.</p>
+              <p className="text-gray-700">
+                Serving Phoenix with quality electrical work since 2009.
+              </p>
             </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">Licensed & Insured</h3>
-              <p className="text-gray-700">Full peace of mind with our professional guarantees.</p>
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Licensed & Insured
+              </h3>
+              <p className="text-gray-700">
+                Full peace of mind with our professional guarantees.
+              </p>
             </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 24/7 Emergency Service
               </h3>
-              <p className="text-gray-700">We're always here when you need us most.</p>
+              <p className="text-gray-700">
+                We're always here when you need us most.
+              </p>
             </div>
           </div>
         </div>
@@ -61,25 +69,33 @@ export default function Home() {
       {/* Featured Services */}
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Our Services</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
+            Our Services
+          </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Residential Services
               </h3>
-              <p className="text-gray-700">Complete electrical solutions for your home.</p>
+              <p className="text-gray-700">
+                Complete electrical solutions for your home.
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Commercial Services
               </h3>
-              <p className="text-gray-700">Powering businesses with reliable electrical work.</p>
+              <p className="text-gray-700">
+                Powering businesses with reliable electrical work.
+              </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Energy-Efficient Solutions
               </h3>
-              <p className="text-gray-700">Save money and energy with our green options.</p>
+              <p className="text-gray-700">
+                Save money and energy with our green options.
+              </p>
             </div>
           </div>
           <div className="text-center mt-8">
@@ -132,7 +148,9 @@ export default function Home() {
                 "I highly recommend KPower for any commercial electrical needs.
                 They're responsive and knowledgeable."
               </p>
-              <p className="font-semibold text-blue-600">- Mark T., Scottsdale</p>
+              <p className="font-semibold text-blue-600">
+                - Mark T., Scottsdale
+              </p>
             </div>
           </div>
         </div>
