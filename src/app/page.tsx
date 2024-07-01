@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link';
-import Layout from '../components/Layout';
+import { withLayout } from '../components/Layout';
 
-export default function Home() {
+function Home() {
   return (
-    <Layout>
+    <>
       {/* Hero Section */}
       <section className="bg-blue-600 py-16">
         <div className="container mx-auto">
@@ -257,6 +257,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
+
+export default withLayout(Home);
