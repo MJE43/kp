@@ -10,13 +10,13 @@ export default function AboutPage() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Our Story</h2>
         <p className="mb-4">
-          Welcome to KPPower Electrical Services. Founded in [YEAR], we have
+          Welcome to KPPower Electrical Services. Founded in 20XX, we have
           been providing top-quality electrical solutions for residential and
           commercial clients in Tucson, Arizona and surrounding areas within a
           50-mile radius.
         </p>
         <p className="mb-4">
-          Our owner, Kyle, brings [X] years of experience to every project. His
+          Our owner, Kyle, brings XX years of experience to every project. His
           passion for electrical work and commitment to customer satisfaction
           are the driving forces behind our company's success.
         </p>
