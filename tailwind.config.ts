@@ -11,14 +11,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
-        heading: ['Montserrat', ...fontFamily.sans],
+        sans: ['Roboto', ...fontFamily.sans],
+        heading: ['Oswald', ...fontFamily.sans],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
