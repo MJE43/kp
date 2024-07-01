@@ -2,49 +2,30 @@ import React from 'react';
 import Link from 'next/link';
 
 const Navigation: React.FC = () => {
+  const navItems = [
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
+    { href: '/about', label: 'About Us' },
+    { href: '/projects', label: 'Projects' },
+    { href: '/testimonials', label: 'Testimonials' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/contact', label: 'Contact' },
+    { href: '/faq', label: 'FAQ' },
+  ];
+
   return (
     <nav>
-      <ul className="flex space-x-4">
-        <li>
-          <Link href="/" className="hover:text-gray-300">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/services" className="hover:text-gray-300">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link href="/about" className="hover:text-gray-300">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link href="/projects" className="hover:text-gray-300">
-            Projects
-          </Link>
-        </li>
-        <li>
-          <Link href="/testimonials" className="hover:text-gray-300">
-            Testimonials
-          </Link>
-        </li>
-        <li>
-          <Link href="/blog" className="hover:text-gray-300">
-            Blog
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact" className="hover:text-gray-300">
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link href="/faq" className="hover:text-gray-300">
-            FAQ
-          </Link>
-        </li>
+      <ul className="flex flex-col md:flex-row md:space-x-4">
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className="block py-2 md:py-0 px-4 text-sm font-medium hover:bg-primary-foreground hover:text-primary transition-colors duration-150"
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
