@@ -50,7 +50,8 @@ export default function Home() {
                 Personal Service
               </h3>
               <p className="text-gray-700">
-                Direct communication and service from John himself, ensuring quality and accountability.
+                Direct communication and service from John himself, ensuring
+                quality and accountability.
               </p>
             </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
@@ -58,7 +59,8 @@ export default function Home() {
                 15+ Years Experience
               </h3>
               <p className="text-gray-700">
-                Extensive knowledge and expertise in residential electrical work since 2009.
+                Extensive knowledge and expertise in residential electrical work
+                since 2009.
               </p>
             </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
@@ -66,7 +68,8 @@ export default function Home() {
                 Licensed & Insured
               </h3>
               <p className="text-gray-700">
-                Full peace of mind with professional guarantees and proper certifications.
+                Full peace of mind with professional guarantees and proper
+                certifications.
               </p>
             </div>
           </div>
@@ -93,7 +96,8 @@ export default function Home() {
                 Wiring & Rewiring
               </h3>
               <p className="text-gray-700">
-                Safe and up-to-code wiring solutions for new homes and renovations.
+                Safe and up-to-code wiring solutions for new homes and
+                renovations.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -123,8 +127,8 @@ export default function Home() {
             Get Your Free Estimate Today!
           </h2>
           <p className="mb-8 text-gray-700">
-            I'm ready to provide you with a comprehensive and
-            no-obligation quote for your electrical needs.
+            I'm ready to provide you with a comprehensive and no-obligation
+            quote for your electrical needs.
           </p>
           <Link
             href="/contact"
@@ -145,8 +149,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="mb-4 text-gray-700">
-                "John did an amazing job upgrading our home's electrical
-                system. Professional and efficient!"
+                "John did an amazing job upgrading our home's electrical system.
+                Professional and efficient!"
               </p>
               <p className="font-semibold text-blue-600">- Sarah J., Phoenix</p>
             </div>
