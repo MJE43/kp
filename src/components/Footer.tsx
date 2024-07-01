@@ -24,9 +24,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Home', 'Services', 'Projects', 'About', 'Contact', 'Blog', 'FAQ', 'Testimonials'].map((item) => (
+              {['Home', 'Services', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} className="hover:text-blue-300 transition-colors duration-300">
+                  <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-blue-300 transition-colors duration-300">
                     {item}
                   </Link>
                 </li>

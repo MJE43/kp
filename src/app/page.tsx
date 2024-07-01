@@ -145,8 +145,7 @@ function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
             What Our Customers Say
           </h2>
-          {/* We'll replace this with dynamic testimonials later */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="mb-4 text-gray-700">
                 "Kyle did an amazing job upgrading our home's electrical system.
@@ -161,6 +160,15 @@ function Home() {
               </p>
               <p className="font-semibold text-blue-600">
                 - Mark T., Scottsdale
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="mb-4 text-gray-700">
+                "Kyle's attention to detail and commitment to safety impressed me.
+                Great service at a fair price!"
+              </p>
+              <p className="font-semibold text-blue-600">
+                - Emily R., Tucson
               </p>
             </div>
           </div>
