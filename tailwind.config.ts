@@ -27,6 +27,16 @@ const config: Config = {
         '5xl': ['3rem', { lineHeight: '1' }],
         '6xl': ['3.75rem', { lineHeight: '1' }],
       },
+      backgroundColor: {
+        'primary': 'hsl(var(--primary))',
+        'secondary': 'hsl(var(--secondary))',
+        'background': 'hsl(var(--background))',
+      },
+      textColor: {
+        'primary': 'hsl(var(--primary))',
+        'secondary': 'hsl(var(--secondary))',
+        'foreground': 'hsl(var(--foreground))',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
