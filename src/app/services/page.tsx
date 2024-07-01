@@ -66,11 +66,11 @@ export default function ServicesPage() {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-8 text-center">
+      <div className="container mx-auto px-4 py-8 bg-gray-100">
+        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
           Our Electrical Services
         </h1>
-        <p className="text-xl mb-12 text-center">
+        <p className="text-xl mb-12 text-center text-gray-700">
           KPower Electrical Services offers a wide range of electrical solutions
           for residential and commercial clients in Phoenix, Arizona.
         </p>
@@ -83,7 +83,7 @@ export default function ServicesPage() {
             <div className="bg-blue-600 text-white p-4">
               <h2 className="text-2xl font-semibold">{service.title}</h2>
             </div>
-            <div className="p-6">
+            <div className="p-6 text-gray-800">
               <p className="mb-4">{service.description}</p>
               <ul className="list-disc pl-6">
                 {service.items.map((item, itemIndex) => (
@@ -97,8 +97,10 @@ export default function ServicesPage() {
         ))}
 
         <div className="text-center mt-12">
-          <h3 className="text-2xl font-semibold mb-4">Ready to get started?</h3>
-          <p className="mb-6">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+            Ready to get started?
+          </h3>
+          <p className="mb-6 text-gray-700">
             Contact us today for a free estimate on your electrical project.
           </p>
           <a
