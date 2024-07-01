@@ -123,8 +123,8 @@ export default function Home() {
             Get Your Free Estimate Today!
           </h2>
           <p className="mb-8 text-gray-700">
-            Our team is ready to provide you with a comprehensive and
-            no-obligation quote.
+            I'm ready to provide you with a comprehensive and
+            no-obligation quote for your electrical needs.
           </p>
           <Link
             href="/contact"
@@ -145,15 +145,15 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="mb-4 text-gray-700">
-                "KPower did an amazing job upgrading our home's electrical
+                "John did an amazing job upgrading our home's electrical
                 system. Professional and efficient!"
               </p>
               <p className="font-semibold text-blue-600">- Sarah J., Phoenix</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="mb-4 text-gray-700">
-                "I highly recommend KPower for any commercial electrical needs.
-                They're responsive and knowledgeable."
+                "I highly recommend John for any residential electrical needs.
+                He's responsive and knowledgeable."
               </p>
               <p className="font-semibold text-blue-600">
                 - Mark T., Scottsdale
