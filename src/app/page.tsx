@@ -10,25 +10,28 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="text-center bg-white rounded-lg shadow-md p-8">
             <h1 className="text-4xl font-bold mb-4 text-blue-600">
-              KPower Electrical Services
+              John's Electrical Services
             </h1>
             <p className="text-xl mb-8 text-gray-700">
-              Your Trusted Electrical Experts in Phoenix, Arizona
+              Your Friendly Neighborhood Electrician in Phoenix, Arizona
             </p>
             <div className="mb-8">
               <a
-                href="tel:+15551234567"
+                href="tel:+16025551234"
                 className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4 hover:bg-yellow-600"
               >
-                Emergency: (555) 123-4567
+                Call John: (602) 555-1234
               </a>
               <Link
                 href="/contact"
                 className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700"
               >
-                Request a Quote
+                Schedule a Visit
               </Link>
             </div>
+            <p className="text-gray-700 italic">
+              "I'm John, your local electrician. With over 15 years of experience, I'm here to solve all your electrical needs personally."
+            </p>
           </div>
         </div>
       </section>
