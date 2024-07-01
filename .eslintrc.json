@@ -2,15 +2,23 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime",
     "prettier"
   ],
-  "plugins": ["react"],
+  "plugins": ["react", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   },
   "settings": {
     "react": {
