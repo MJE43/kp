@@ -3,9 +3,9 @@ import Layout from '../../components/Layout';
 export default function ContactPage() {
   return (
     <Layout>
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+      <h1 className="text-3xl font-bold mb-4">Contact KPPower and Electrical Services</h1>
       <p className="mb-4">
-        Get in touch with us for any inquiries or to schedule a service.
+        Get in touch with Kyle and our team for any inquiries or to schedule a service.
       </p>
       <div className="space-y-4">
         <div>
@@ -14,11 +14,11 @@ export default function ContactPage() {
         </div>
         <div>
           <h2 className="text-xl font-semibold mb-2">Email</h2>
-          <p>info@kpowerelectrical.com</p>
+          <p>info@kppower.com</p>
         </div>
         <div>
           <h2 className="text-xl font-semibold mb-2">Address</h2>
-          <p>123 Main Street, Anytown, USA 12345</p>
+          <p>1207 W Niagara St, Tucson, AZ 85710</p>
         </div>
       </div>
     </Layout>
