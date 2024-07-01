@@ -6,24 +6,24 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">
+      <section className="bg-blue-600 py-20">
+        <div className="container mx-auto text-center bg-white rounded-lg shadow-md py-8">
+          <h1 className="text-4xl font-bold mb-4 text-blue-600">
             KPower Electrical Services
           </h1>
-          <p className="text-xl mb-8">
+          <p className="text-xl mb-8 text-gray-700">
             Your Trusted Electrical Experts in Phoenix, Arizona
           </p>
           <div className="mb-8">
             <a
               href="tel:+15551234567"
-              className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4"
+              className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4 hover:bg-yellow-600"
             >
               Emergency: (555) 123-4567
             </a>
             <Link
               href="/contact"
-              className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full"
+              className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700"
             >
               Request a Quote
             </Link>
@@ -95,17 +95,17 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="bg-yellow-500 py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
+        <div className="container mx-auto text-center bg-white rounded-lg shadow-md py-8">
+          <h2 className="text-3xl font-bold mb-4 text-yellow-500">
             Get Your Free Estimate Today!
           </h2>
-          <p className="mb-8">
+          <p className="mb-8 text-gray-700">
             Our team is ready to provide you with a comprehensive and
             no-obligation quote.
           </p>
           <Link
             href="/contact"
-            className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700"
           >
             Request Free Estimate
           </Link>
@@ -113,26 +113,26 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-100">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
             What Our Customers Say
           </h2>
           {/* We'll replace this with dynamic testimonials later */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <p className="mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="mb-4 text-gray-700">
                 "KPower did an amazing job upgrading our home's electrical
                 system. Professional and efficient!"
               </p>
-              <p className="font-semibold">- Sarah J., Phoenix</p>
+              <p className="font-semibold text-blue-600">- Sarah J., Phoenix</p>
             </div>
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <p className="mb-4">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="mb-4 text-gray-700">
                 "I highly recommend KPower for any commercial electrical needs.
                 They're responsive and knowledgeable."
               </p>
-              <p className="font-semibold">- Mark T., Scottsdale</p>
+              <p className="font-semibold text-blue-600">- Mark T., Scottsdale</p>
             </div>
           </div>
         </div>
