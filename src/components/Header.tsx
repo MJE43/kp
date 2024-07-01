@@ -16,14 +16,14 @@ const Header: React.FC = () => {
   return (
     <header className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/" className="text-2xl font-bold font-heading">
           KP Power and Electrical Services
         </Link>
         <nav className="hidden md:block">
           <ul className="flex space-x-4">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link href={item.href} className="hover:text-blue-300 transition-colors duration-300">
+                <Link href={item.href} className="hover:text-secondary transition-colors duration-300">
                   {item.name}
                 </Link>
               </li>
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-300 hover:bg-blue-700 transition-colors duration-300"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:text-secondary hover:bg-primary-foreground transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

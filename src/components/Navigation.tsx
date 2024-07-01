@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="block py-2 md:py-0 px-4 text-sm font-medium hover:bg-primary-foreground hover:text-primary transition-colors duration-150"
+              className="block py-2 md:py-0 px-4 text-sm font-medium hover:bg-secondary hover:text-secondary-foreground transition-colors duration-150"
             >
               {item.label}
             </Link>
