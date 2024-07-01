@@ -42,15 +42,23 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
-            Why Choose KPower?
+            Why Choose John's Electrical Services?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                Personal Service
+              </h3>
+              <p className="text-gray-700">
+                Direct communication and service from John himself, ensuring quality and accountability.
+              </p>
+            </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 15+ Years Experience
               </h3>
               <p className="text-gray-700">
-                Serving Phoenix with quality electrical work since 2009.
+                Extensive knowledge and expertise in residential electrical work since 2009.
               </p>
             </div>
             <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
@@ -58,15 +66,7 @@ export default function Home() {
                 Licensed & Insured
               </h3>
               <p className="text-gray-700">
-                Full peace of mind with our professional guarantees.
-              </p>
-            </div>
-            <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                24/7 Emergency Service
-              </h3>
-              <p className="text-gray-700">
-                We're always here when you need us most.
+                Full peace of mind with professional guarantees and proper certifications.
               </p>
             </div>
           </div>
@@ -77,31 +77,31 @@ export default function Home() {
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
-            Our Services
+            Residential Electrical Services
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                Residential Services
+                Electrical Repairs
               </h3>
               <p className="text-gray-700">
-                Complete electrical solutions for your home.
+                Quick and reliable fixes for all your home electrical issues.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                Commercial Services
+                Wiring & Rewiring
               </h3>
               <p className="text-gray-700">
-                Powering businesses with reliable electrical work.
+                Safe and up-to-code wiring solutions for new homes and renovations.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2 text-blue-600">
-                Energy-Efficient Solutions
+                Lighting Installation
               </h3>
               <p className="text-gray-700">
-                Save money and energy with our green options.
+                Brighten your home with expert lighting fixture installations.
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Home() {
               href="/services"
               className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
             >
-              View All Services
+              View All Residential Services
             </Link>
           </div>
         </div>
