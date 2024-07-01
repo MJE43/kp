@@ -30,7 +30,9 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-gray-700 italic">
-              "I'm John, your local electrician. With over 15 years of experience, I'm here to solve all your electrical needs personally."
+              "I'm John, your local electrician. With over 15 years of
+              experience, I'm here to solve all your electrical needs
+              personally."
             </p>
           </div>
         </div>
