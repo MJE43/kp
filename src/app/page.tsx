@@ -32,27 +32,27 @@ export default function Home() {
       </section>
 
       {/* Introduction */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
             Why Choose KPower?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 15+ Years Experience
               </h3>
-              <p>Serving Phoenix with quality electrical work since 2009.</p>
+              <p className="text-gray-700">Serving Phoenix with quality electrical work since 2009.</p>
             </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">Licensed & Insured</h3>
-              <p>Full peace of mind with our professional guarantees.</p>
+            <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">Licensed & Insured</h3>
+              <p className="text-gray-700">Full peace of mind with our professional guarantees.</p>
             </div>
-            <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 24/7 Emergency Service
               </h3>
-              <p>We're always here when you need us most.</p>
+              <p className="text-gray-700">We're always here when you need us most.</p>
             </div>
           </div>
         </div>
