@@ -174,36 +174,36 @@ export default function Home() {
               </p>
               <Link
                 href="/blog/electrical-upgrade-signs"
-                className="text-blue-600 font-semibold"
+                className="text-blue-600 font-semibold hover:text-blue-700"
               >
                 Read More
               </Link>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 The Benefits of LED Lighting
               </h3>
-              <p className="mb-4">
+              <p className="mb-4 text-gray-700">
                 Discover how LED lights can save you money and energy...
               </p>
               <Link
                 href="/blog/led-lighting-benefits"
-                className="text-blue-600 font-semibold"
+                className="text-blue-600 font-semibold hover:text-blue-700"
               >
                 Read More
               </Link>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Electrical Safety Tips for Homeowners
               </h3>
-              <p className="mb-4">
+              <p className="mb-4 text-gray-700">
                 Keep your family safe with these essential electrical safety
                 tips...
               </p>
               <Link
                 href="/blog/electrical-safety-tips"
-                className="text-blue-600 font-semibold"
+                className="text-blue-600 font-semibold hover:text-blue-700"
               >
                 Read More
               </Link>
