@@ -1,9 +1,9 @@
-import Layout from '../../components/Layout';
+import { withLayout } from '../../components/Layout';
 import ContactForm from '../../components/ContactForm';
 
-export default function ContactPage() {
+function ContactPage() {
   return (
-    <Layout>
+    <>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-6 text-blue-600">
           Contact KPPower and Electrical Services
@@ -73,6 +73,8 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
+
+export default withLayout(ContactPage);

@@ -16,7 +16,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default function withLayout<T extends {}>(Component: React.ComponentType<T>) {
+export default Layout;
+
+export function withLayout<T extends {}>(Component: React.ComponentType<T>) {
   return function WrappedComponent(props: T) {
     return (
       <Layout>
