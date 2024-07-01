@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
+  const socialLinks = [
+    { Icon: FaFacebook, url: 'https://facebook.com', label: 'Facebook' },
+    { Icon: FaTwitter, url: 'https://twitter.com', label: 'Twitter' },
+    { Icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram' },
+    { Icon: FaLinkedin, url: 'https://linkedin.com', label: 'LinkedIn' },
+  ];
   const currentYear = new Date().getFullYear();
 
   return (
@@ -36,13 +42,14 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((Icon, index) => (
+              {socialLinks.map(({ Icon, url, label }) => (
                 <a
-                  key={index}
-                  href="#"
+                  key={label}
+                  href={url}
                   className="text-white hover:text-blue-300 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={label}
                 >
                   <Icon size={24} />
                 </a>
