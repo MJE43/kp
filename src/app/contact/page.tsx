@@ -4,7 +4,9 @@ export default function ContactPage() {
   return (
     <Layout>
       <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-      <p className="mb-4">Get in touch with us for any inquiries or to schedule a service.</p>
+      <p className="mb-4">
+        Get in touch with us for any inquiries or to schedule a service.
+      </p>
       <div className="space-y-4">
         <div>
           <h2 className="text-xl font-semibold mb-2">Phone</h2>

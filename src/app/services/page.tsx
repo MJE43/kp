@@ -71,8 +71,8 @@ export default function ServicesPage() {
           Our Electrical Services
         </h1>
         <p className="text-xl mb-12 text-center text-gray-700">
-          KPower Electrical Services offers a wide range of electrical solutions
-          for residential and commercial clients in Phoenix, Arizona.
+          KPPower Electrical Services offers a wide range of electrical
+          solutions for residential and commercial clients in Phoenix, Arizona.
         </p>
 
         {services.map((service, index) => (
