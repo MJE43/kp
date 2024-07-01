@@ -1,23 +1,19 @@
 import React from 'react';
-import Link from 'next/link';
-import Navigation from './Navigation';
+import Header from './Header';
+import Footer from './Footer';
 
-const Header: React.FC = () => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <header className="bg-blue-600 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
-          KP Power and Electrical Services
-        </Link>
-        <div className="hidden md:block">
-          <Navigation />
-        </div>
-        <div className="md:hidden">
-          {/* We'll add a mobile menu button here later */}
-        </div>
-      </div>
-    </header>
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="flex-grow">{children}</main>
+      <Footer />
+    </div>
   );
 };
 
-export default Header;
+export default Layout;
