@@ -61,25 +61,25 @@ export default function Home() {
       {/* Featured Services */}
       <section className="bg-gray-100 py-16">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Services</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Residential Services
               </h3>
-              <p>Complete electrical solutions for your home.</p>
+              <p className="text-gray-700">Complete electrical solutions for your home.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Commercial Services
               </h3>
-              <p>Powering businesses with reliable electrical work.</p>
+              <p className="text-gray-700">Powering businesses with reliable electrical work.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-xl font-semibold mb-2 text-blue-600">
                 Energy-Efficient Solutions
               </h3>
-              <p>Save money and energy with our green options.</p>
+              <p className="text-gray-700">Save money and energy with our green options.</p>
             </div>
           </div>
           <div className="text-center mt-8">
