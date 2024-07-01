@@ -12,7 +12,8 @@ export default function AboutPage() {
         <p className="mb-4">
           Welcome to KPPower Electrical Services. Founded in [YEAR], we have
           been providing top-quality electrical solutions for residential and
-          commercial clients in [LOCATION].
+          commercial clients in Tucson, Arizona and surrounding areas within a
+          50-mile radius.
         </p>
         <p className="mb-4">
           Our owner, Kyle, brings [X] years of experience to every project. His
@@ -27,7 +28,21 @@ export default function AboutPage() {
           At KPPower Electrical Services, our mission is to ensure the safety
           and satisfaction of our clients through excellent workmanship and
           personalized service. We strive to be the most trusted and reliable
-          electrical service provider in our community.
+          electrical service provider in Tucson and the surrounding communities.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">Our Service Area</h2>
+        <p className="mb-4">
+          Based in Tucson, AZ, we proudly serve customers within a 50-mile
+          radius. This includes [list a few major areas or cities within the
+          radius].
+        </p>
+        <p className="mb-4">
+          Need service outside our standard area? Contact us for a custom quote
+          - we're willing to extend our reach for an additional fee factored
+          into the quote.
         </p>
       </section>
 
