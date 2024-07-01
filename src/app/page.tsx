@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-blue-600 py-20">
+      <section className="bg-blue-600 py-16">
         <div className="container mx-auto">
-          <div className="text-center bg-white rounded-lg shadow-md py-8">
+          <div className="text-center bg-white rounded-lg shadow-md p-8">
             <h1 className="text-4xl font-bold mb-4 text-blue-600">
               KPower Electrical Services
             </h1>
