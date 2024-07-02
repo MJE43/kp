@@ -6,15 +6,10 @@ import CallToActionSection from '../components/CallToActionSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import RecentBlogPostsSection from '../components/RecentBlogPostsSection';
 import SocialMediaSection from '../components/SocialMediaSection';
-import Meta from '../components/Meta';
 
 function Home() {
   return (
     <>
-      <Meta 
-        title="Kyle Price Power and Electrical Services" 
-        description="Your Friendly Neighborhood Electrician in Tucson, Arizona"
-      />
       <HeroSection phoneNumber="+15205551234" />
       <IntroductionSection />
       <FeaturedServicesSection />
