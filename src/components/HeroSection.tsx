@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  phoneNumber: string;
+}
+
+export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   return (
     <section className="bg-blue-600 py-16">
       <div className="container mx-auto">
@@ -13,7 +17,7 @@ export default function HeroSection() {
           </p>
           <div className="mb-8">
             <a
-              href="tel:+16025551234"
+              href="tel:+15205551234"
               className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4 hover:bg-yellow-600"
             >
               Call Kyle: (520) 555-1234
