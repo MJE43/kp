@@ -7,13 +7,13 @@ const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion
 const MotionH1 = dynamic(() => import('framer-motion').then((mod) => mod.motion.h1), { ssr: false });
 const MotionP = dynamic(() => import('framer-motion').then((mod) => mod.motion.p), { ssr: false });
 
-interface HeroSectionProps {
-  phoneNumber: string;
-}
-
 type PhoneNumber = string;
 
-export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber }) {
+interface HeroSectionProps {
+  phoneNumber: PhoneNumber;
+}
+
+export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
