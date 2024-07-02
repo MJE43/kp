@@ -21,7 +21,15 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
   }, []);
 
   if (!isMounted) {
-    return null;
+    return (
+      <section className="bg-[#0A2342] py-16">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8">
+            {/* Placeholder content */}
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (
@@ -87,6 +95,9 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
               width={500}
               height={500}
               className="rounded-lg shadow-md"
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
             />
           </MotionDiv>
         </div>
