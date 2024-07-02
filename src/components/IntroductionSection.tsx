@@ -1,13 +1,13 @@
 export default function IntroductionSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
+        <h2 className="text-3xl font-bold mb-8 text-center text-primary">
           Why Choose Kyle's Electrical Services?
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center bg-gray-100 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          <div className="text-center bg-card p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-2 text-primary">
               Personal Service
             </h3>
             <p className="text-gray-700">

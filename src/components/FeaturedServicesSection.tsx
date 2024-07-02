@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function FeaturedServicesSection() {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-muted py-16">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
+        <h2 className="text-3xl font-bold mb-8 text-center text-primary">
           Residential Electrical Services
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-2 text-blue-600">
+          <div className="bg-card p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold mb-2 text-primary">
               Electrical Repairs
             </h3>
             <p className="text-gray-700">
