@@ -14,7 +14,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ phoneNumber }: HeroSectionProps) {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
     setIsMounted(true);
