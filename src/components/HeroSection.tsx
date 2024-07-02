@@ -6,7 +6,9 @@ interface HeroSectionProps {
   phoneNumber: string;
 }
 
-export default function HeroSection({ phoneNumber }: HeroSectionProps) {
+type PhoneNumber = string;
+
+export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber }) {
   return (
     <section className="bg-[#0A2342] py-16">
       <div className="container mx-auto">
