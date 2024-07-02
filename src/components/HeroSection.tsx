@@ -17,14 +17,14 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
           </p>
           <div className="mb-8">
             <a
-              href="tel:+15205551234"
-              className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4 hover:bg-yellow-600"
+              href={`tel:${phoneNumber}`}
+              className="bg-yellow-500 text-blue-900 font-bold py-2 px-4 rounded-full mr-4 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
             >
-              Call Kyle: (520) 555-1234
+              Call Kyle: {phoneNumber}
             </a>
             <Link
               href="/contact"
-              className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700"
+              className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Schedule a Visit
             </Link>
