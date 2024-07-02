@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
@@ -13,6 +14,16 @@ interface HeroSectionProps {
 type PhoneNumber = string;
 
 export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber }) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <section className="bg-[#0A2342] py-16">
       <div className="container mx-auto">
