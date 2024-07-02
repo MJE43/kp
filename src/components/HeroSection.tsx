@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+
+const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
+const MotionH1 = dynamic(() => import('framer-motion').then((mod) => mod.motion.h1), { ssr: false });
+const MotionP = dynamic(() => import('framer-motion').then((mod) => mod.motion.p), { ssr: false });
 
 interface HeroSectionProps {
   phoneNumber: string;
@@ -14,23 +18,23 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8">
           <div className="md:w-1/2 text-center md:text-left">
-            <motion.h1 
+            <MotionH1 
               className="text-4xl font-bold mb-4 text-[#0A2342]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
               Kyle Price Power and Electrical Services
-            </motion.h1>
-            <motion.p 
+            </MotionH1>
+            <MotionP 
               className="text-xl mb-8 text-[#333333]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               Your Friendly Neighborhood Electrician in Tucson, Arizona
-            </motion.p>
-            <motion.div 
+            </MotionP>
+            <MotionDiv 
               className="mb-8"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -48,8 +52,8 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
               >
                 Schedule a Visit
               </Link>
-            </motion.div>
-            <motion.p 
+            </MotionDiv>
+            <MotionP 
               className="text-[#333333] italic"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,9 +62,9 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
               "I'm Kyle, your local electrician. With over 15 years of
               experience, I'm here to solve all your electrical needs
               personally."
-            </motion.p>
+            </MotionP>
           </div>
-          <motion.div 
+          <MotionDiv 
             className="md:w-1/2 mt-8 md:mt-0"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -73,7 +77,7 @@ export default function HeroSection({ phoneNumber }: { phoneNumber: PhoneNumber 
               height={500}
               className="rounded-lg shadow-md"
             />
-          </motion.div>
+          </MotionDiv>
         </div>
       </div>
     </section>
