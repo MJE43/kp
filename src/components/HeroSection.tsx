@@ -38,17 +38,17 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
     <section className="bg-[#0A2342] py-16">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8">
-          <div className="md:w-1/2 text-center md:text-left">
+          <div className="md:w-3/5 text-center md:text-left pr-8">
             <MotionH1 
-              className="text-4xl font-bold mb-4 text-[#0A2342]"
+              className="text-5xl font-bold mb-4 text-[#0A2342]"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Kyle Price Power and Electrical Services
+              Kyle Price Power and Electrical
             </MotionH1>
             <MotionP 
-              className="text-xl mb-8 text-[#333333]"
+              className="text-2xl mb-8 text-[#20A39E] font-semibold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -63,13 +63,13 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             >
               <a
                 href={`tel:${phoneNumber}`}
-                className="bg-[#FFD100] text-[#0A2342] font-bold py-2 px-4 rounded-full mr-4 hover:bg-[#20A39E] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FFD100] focus:ring-offset-2 transition-colors duration-300"
+                className="bg-[#FFD100] text-[#0A2342] font-bold py-3 px-6 rounded-full mr-4 hover:bg-[#20A39E] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FFD100] focus:ring-offset-2 transition-colors duration-300 text-lg"
               >
                 Call Kyle: {phoneNumber}
               </a>
               <Link
                 href="/contact"
-                className="bg-[#0A2342] text-white font-bold py-2 px-4 rounded-full hover:bg-[#20A39E] focus:outline-none focus:ring-2 focus:ring-[#0A2342] focus:ring-offset-2 transition-colors duration-300"
+                className="bg-[#20A39E] text-white font-bold py-3 px-6 rounded-full hover:bg-[#0A2342] focus:outline-none focus:ring-2 focus:ring-[#20A39E] focus:ring-offset-2 transition-colors duration-300 text-lg"
               >
                 Schedule a Visit
               </Link>
@@ -86,7 +86,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             </MotionP>
           </div>
           <MotionDiv 
-            className="md:w-1/2 mt-8 md:mt-0"
+            className="md:w-2/5 mt-8 md:mt-0"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -94,9 +94,9 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             <Image
               src="/images/electrician.jpg"
               alt="Kyle Price, your local electrician"
-              width={500}
-              height={500}
-              className="rounded-lg shadow-md"
+              width={400}
+              height={400}
+              className="rounded-lg shadow-md w-full h-auto"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="

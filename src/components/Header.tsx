@@ -59,7 +59,9 @@ const Header: React.FC = () => {
                 <Link
                   href={item.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-gray-300 hover:bg-primary-dark transition-colors duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {item.name}
                 </Link>
