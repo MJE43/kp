@@ -45,7 +45,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Kyle Price Power and Electrical
+              K.P. Power
             </MotionH1>
             <MotionP 
               className="text-2xl mb-8 text-[#20A39E] font-semibold"
