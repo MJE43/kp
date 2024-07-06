@@ -44,7 +44,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto text-gray-800">
       <div className="space-y-2">
         <Label htmlFor="name">Name</Label>
         <Input
@@ -81,16 +81,16 @@ const ContactForm = () => {
           rows={4}
         />
       </div>
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" className="w-full bg-primary text-white hover:bg-primary-dark transition-colors duration-300" disabled={isSubmitting}>
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
       {submitStatus === 'success' && (
-        <Alert variant="default">
+        <Alert variant="default" className="bg-green-100 text-green-800 border-green-300">
           <AlertDescription>Message sent successfully!</AlertDescription>
         </Alert>
       )}
       {submitStatus === 'error' && (
-        <Alert variant="destructive">
+        <Alert variant="destructive" className="bg-red-100 text-red-800 border-red-300">
           <AlertDescription>Failed to send message. Please try again.</AlertDescription>
         </Alert>
       )}

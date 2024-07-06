@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground py-8">
+    <footer className="bg-primary text-white py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {['Home', 'Services', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-secondary transition-colors duration-300">
+                  <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} className="hover:text-gray-300 transition-colors duration-300">
                     {item}
                   </Link>
                 </li>
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                 <a
                   key={label}
                   href={url}
-                  className="text-primary-foreground hover:text-secondary transition-colors duration-300"
+                  className="text-white hover:text-gray-300 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}

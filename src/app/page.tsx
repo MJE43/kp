@@ -10,7 +10,7 @@ import SocialMediaSection from '../components/SocialMediaSection';
 function Home() {
   return (
     <>
-      <HeroSection phoneNumber="+15205551234" />
+      <HeroSection phoneNumber="(520) 555-1234" />
       <IntroductionSection />
       <FeaturedServicesSection />
       <CallToActionSection />

@@ -4,7 +4,7 @@ export default function SocialMediaSection() {
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Connect With Us</h2>
         <div className="flex justify-center space-x-4">
-          <a href="#" className="text-blue-600 hover:text-blue-800">
+          <a href="#" className="text-blue-600 hover:text-blue-800" rel="noopener noreferrer" aria-label="Visit our Facebook page">
             <span className="sr-only">Facebook</span>
             <svg
               className="h-6 w-6"
@@ -19,7 +19,7 @@ export default function SocialMediaSection() {
               />
             </svg>
           </a>
-          <a href="#" className="text-blue-400 hover:text-blue-500">
+          <a href="#" className="text-blue-400 hover:text-blue-500" rel="noopener noreferrer">
             <span className="sr-only">Twitter</span>
             <svg
               className="h-6 w-6"
