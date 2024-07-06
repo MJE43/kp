@@ -35,6 +35,7 @@ const Header: React.FC = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-white focus:outline-none"
             aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
           >
             <svg
               className="h-6 w-6"
