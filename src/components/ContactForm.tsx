@@ -1,6 +1,9 @@
-'use client';
-
 import React, { useState } from 'react';
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Label } from "@/components/ui/label";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +11,8 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,75 +24,76 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you would typically send the form data to your server
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Simulating an API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('Form submitted:', formData);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label
-          htmlFor="name"
-          className="block text-sm font-medium text-foreground"
-        >
-          Name
-        </label>
-        <input
+    <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto">
+      <div className="space-y-2">
+        <Label htmlFor="name">Name</Label>
+        <Input
           type="text"
           id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+          placeholder="Your name"
         />
       </div>
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-foreground"
-        >
-          Email
-        </label>
-        <input
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
+        <Input
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+          placeholder="your.email@example.com"
         />
       </div>
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-foreground"
-        >
-          Message
-        </label>
-        <textarea
+      <div className="space-y-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
+          placeholder="Your message here..."
           rows={4}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
-        ></textarea>
+        />
       </div>
-      <div>
-        <button
-          type="submit"
-          className="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-150 ease-in-out"
-        >
-          Send Message
-        </button>
-      </div>
+      <Button type="submit" className="w-full" disabled={isSubmitting}>
+        {isSubmitting ? 'Sending...' : 'Send Message'}
+      </Button>
+      {submitStatus === 'success' && (
+        <Alert variant="default">
+          <AlertDescription>Message sent successfully!</AlertDescription>
+        </Alert>
+      )}
+      {submitStatus === 'error' && (
+        <Alert variant="destructive">
+          <AlertDescription>Failed to send message. Please try again.</AlertDescription>
+        </Alert>
+      )}
     </form>
   );
 };
