@@ -92,7 +92,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <Image
-              src="/images/electrician.jpg"
+              src="/images/KylePrice.jpeg"
               alt="Kyle Price, your local electrician"
               width={400}
               height={400}
