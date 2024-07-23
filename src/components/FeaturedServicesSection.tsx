@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { LightningBoltIcon, WrenchIcon, LightbulbIcon } from '@radix-ui/react-icons';
+import { LightningBoltIcon, WrenchIcon, LightBulbIcon } from '@radix-ui/react-icons';
 
 interface ServiceInfo {
   title: string;
@@ -26,7 +26,7 @@ export default function FeaturedServicesSection() {
     {
       title: "Lighting Installation",
       description: "Brighten your home with expert lighting fixture installations.",
-      icon: <LightbulbIcon className="w-12 h-12 text-blue-500" />,
+      icon: <LightBulbIcon className="w-12 h-12 text-blue-500" />,
     }
   ];
 
