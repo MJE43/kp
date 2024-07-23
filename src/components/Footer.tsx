@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { Button } from "@/components/ui/button";
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -12,22 +13,49 @@ const Footer: React.FC = () => {
   ];
   const currentYear = new Date().getFullYear();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-[#00008B] text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">KP Power and Electrical Services</h3>
-            <p className="text-sm text-slate-300">
-              Providing quality electrical services in Tucson, Arizona for over 15 years.
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-4 gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.div variants={itemVariants}>
+            <h3 className="text-2xl font-bold mb-6">KP Power and Electrical Services</h3>
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Illuminating Tucson with quality electrical services for over 15 years. Your trusted partner in power solutions.
             </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
               {['Home', 'Services', 'About', 'Contact'].map((item) => (
                 <li key={item}>
-                  <Button variant="link" asChild className="p-0 h-auto text-white hover:text-blue-400">
+                  <Button 
+                    variant="link" 
+                    asChild 
+                    className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
+                  >
                     <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}>
                       {item}
                     </Link>
@@ -35,42 +63,61 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <p className="mb-2 text-slate-300">Phone: (555) 123-4567</p>
-            <p className="mb-2 text-slate-300">Email: info@kpowerelectrical.com</p>
-            <p className="text-slate-300">123 Main St, Tucson, AZ 85701</p>
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center">
+                <FaPhone className="mr-3 text-orange-400" />
+                <span>(555) 123-4567</span>
+              </li>
+              <li className="flex items-center">
+                <FaEnvelope className="mr-3 text-orange-400" />
+                <span>info@kpowerelectrical.com</span>
+              </li>
+              <li className="flex items-center">
+                <FaMapMarkerAlt className="mr-3 text-orange-400" />
+                <span>123 Main St, Tucson, AZ 85701</span>
+              </li>
+            </ul>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <h4 className="text-xl font-semibold mb-6">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map(({ Icon, url, label }) => (
-                <Button
+                <motion.div
                   key={label}
-                  variant="ghost"
-                  size="icon"
-                  className="text-white hover:text-blue-400"
-                  asChild
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-white hover:text-orange-400 transition-colors duration-300"
+                    asChild
                   >
-                    <Icon size={24} />
-                  </a>
-                </Button>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                    >
+                      <Icon size={28} />
+                    </a>
+                  </Button>
+                </motion.div>
               ))}
             </div>
-          </div>
-        </div>
-        <div className="mt-8 pt-8 border-t border-slate-700 text-center">
-          <p className="text-sm text-slate-400">
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          className="mt-12 pt-8 border-t border-blue-700 text-center"
+          variants={itemVariants}
+        >
+          <p className="text-sm text-gray-300">
             &copy; {currentYear} KP Power and Electrical Services. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
