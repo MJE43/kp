@@ -3,14 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: #0F172A; /* Dark navy blue */
-    --foreground: #FFFFFF; /* White */
-    --accent: #3B82F6; /* Bright blue */
-    --secondary-background: #F1F5F9; /* Light gray */
-    --border: #E5E7EB; /* Light gray for borders */
-  }
-  
   body {
     @apply bg-background text-foreground font-sans;
   }
@@ -22,7 +14,9 @@
   button {
     @apply bg-accent text-white hover:bg-blue-600;
   }
+}
 
+@layer components {
   .secondary-bg {
     @apply bg-secondary-background;
   }
