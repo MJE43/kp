@@ -8,10 +8,11 @@
     --color-foreground: 255 255 255; /* #FFFFFF */
     --color-accent: 59 130 246; /* #3B82F6 */
     --color-secondary-background: 241 245 249; /* #F1F5F9 */
+    --color-complementary: 255 165 0; /* #FFA500 */
   }
 
   body {
-    @apply bg-[#0F172A] text-white font-sans text-body font-normal;
+    @apply bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] text-white font-sans text-body font-normal min-h-screen;
   }
 
   h1, h2, h3, h4 {
