@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
+import { useInView } from 'react-intersection-observer';
 
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
 const MotionH1 = dynamic(() => import('framer-motion').then((mod) => mod.motion.h1), { ssr: false });
@@ -18,6 +19,10 @@ interface HeroSectionProps {
 
 export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     setIsMounted(true);
