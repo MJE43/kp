@@ -13,6 +13,10 @@
     --color-text-dark: 15 23 42; /* #0F172A */
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-gradient-to-br from-background-start to-background-end text-text-light font-sans text-base font-normal min-h-screen;
   }
@@ -55,6 +59,10 @@
 
   p {
     @apply mb-4 text-base sm:text-lg;
+  }
+
+  section {
+    @apply py-12 sm:py-16 md:py-20;
   }
 }
 
