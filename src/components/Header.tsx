@@ -52,25 +52,23 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
-      {mobileMenuOpen && (
-        <nav className="md:hidden mt-2">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <ul className="space-y-2">
-              {navItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block py-2 text-base text-white hover:opacity-80 transition-opacity duration-300"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      )}
+      <nav className={`md:hidden mt-2 transition-all duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <ul className="space-y-2">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="block py-2 text-base text-white hover:opacity-80 transition-opacity duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
     </header>
   );
 };
