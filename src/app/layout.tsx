@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Montserrat, Open_Sans } from 'next/font/google';
 import '../styles/globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-roboto' });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
+const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' });
 
 export const metadata: Metadata = {
   title: 'Your App Name',
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${roboto.variable} font-sans`}>
+      <body className={`${montserrat.variable} ${openSans.variable} font-sans`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {children}
         </div>
