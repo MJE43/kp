@@ -1,36 +1,44 @@
+import React from 'react';
+import { Star } from 'lucide-react';
+
+const TestimonialCard = ({ quote, author }) => (
+  <div className="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-opacity-20 hover:scale-105">
+    <div className="flex justify-center mb-4">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className="text-yellow-400 w-6 h-6 fill-current" />
+      ))}
+    </div>
+    <p className="mb-4 text-gray-200 italic text-lg leading-relaxed">&ldquo;{quote}&rdquo;</p>
+    <p className="font-semibold text-blue-400">{author}</p>
+  </div>
+);
+
 export default function TestimonialsSection() {
+  const testimonials = [
+    {
+      quote: "Kyle did an amazing job upgrading our home's electrical system. Professional and efficient!",
+      author: "Sarah J., Phoenix"
+    },
+    {
+      quote: "I highly recommend Kyle for any residential electrical needs. He's responsive and knowledgeable.",
+      author: "Mark T., Scottsdale"
+    },
+    {
+      quote: "Kyle's attention to detail and commitment to safety impressed me. Great service at a fair price!",
+      author: "Emily R., Tucson"
+    }
+  ];
+
   return (
-    <section className="py-16 bg-[#0F172A]">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white">
+    <section className="py-20 bg-gradient-to-b from-[#0F172A] to-[#1E293B]">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-12 text-center text-white">
           What Our Customers Say
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="bg-[#F1F5F9] p-6 rounded-lg shadow-md">
-            <p className="mb-4 text-[#0F172A]">
-              "Kyle did an amazing job upgrading our home's electrical system.
-              Professional and efficient!"
-            </p>
-            <p className="font-semibold text-[#3B82F6]">- Sarah J., Phoenix</p>
-          </div>
-          <div className="bg-[#F1F5F9] p-6 rounded-lg shadow-md">
-            <p className="mb-4 text-[#0F172A]">
-              "I highly recommend Kyle for any residential electrical needs.
-              He's responsive and knowledgeable."
-            </p>
-            <p className="font-semibold text-[#3B82F6]">
-              - Mark T., Scottsdale
-            </p>
-          </div>
-          <div className="bg-[#F1F5F9] p-6 rounded-lg shadow-md">
-            <p className="mb-4 text-[#0F172A]">
-              "Kyle's attention to detail and commitment to safety impressed me.
-              Great service at a fair price!"
-            </p>
-            <p className="font-semibold text-[#3B82F6]">
-              - Emily R., Tucson
-            </p>
-          </div>
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
         </div>
       </div>
     </section>
