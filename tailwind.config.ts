@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
+import resolveConfig from 'tailwindcss/resolveConfig';
 
-const config = {
+const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -16,6 +17,8 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
 
-export default config;
+const fullConfig = resolveConfig(config);
+
+export default fullConfig;
