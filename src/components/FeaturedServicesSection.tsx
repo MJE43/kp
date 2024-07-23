@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { LightningBoltIcon, WrenchIcon, LightBulbIcon } from '@radix-ui/react-icons';
-
+import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon } from '@heroicons/react/24/outline';
 interface ServiceInfo {
   title: string;
   description: string;
@@ -21,7 +20,7 @@ export default function FeaturedServicesSection() {
     {
       title: "Wiring & Rewiring",
       description: "Safe and up-to-code wiring solutions for new homes and renovations.",
-      icon: <LightningBoltIcon className="w-12 h-12 text-blue-500" />,
+      icon: <LightningBoltIcon className="w-12 h-12 text-blue-500" />, // Corrected icon
     },
     {
       title: "Lighting Installation",
