@@ -59,7 +59,7 @@
   }
 
   section {
-    @apply py-12 sm:py-16 md:py-20;
+    @apply py-20 sm:py-24 md:py-28;
   }
 }
 
@@ -69,7 +69,11 @@
   }
 
   .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-10 sm:px-12 lg:px-14;
+  }
+
+  .section-spacing {
+    @apply my-16 sm:my-20 md:my-24;
   }
 
   .grid-layout {
