@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 interface TestimonialCardProps {
   quote: string;
@@ -16,6 +17,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => (
     <p className="font-semibold text-blue-400">{author}</p>
   </div>
 );
+
+TestimonialCard.propTypes = {
+  quote: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+};
 
 interface Testimonial {
   quote: string;
