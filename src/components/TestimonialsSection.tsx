@@ -1,7 +1,11 @@
-import React from 'react';
 import { Star } from 'lucide-react';
 
-const TestimonialCard = ({ quote, author }) => (
+interface TestimonialCardProps {
+  quote: string;
+  author: string;
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => (
   <div className="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-opacity-20 hover:scale-105">
     <div className="flex justify-center mb-4">
       {[...Array(5)].map((_, i) => (
@@ -13,8 +17,13 @@ const TestimonialCard = ({ quote, author }) => (
   </div>
 );
 
+interface Testimonial {
+  quote: string;
+  author: string;
+}
+
 export default function TestimonialsSection() {
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       quote: "Kyle did an amazing job upgrading our home's electrical system. Professional and efficient!",
       author: "Sarah J., Phoenix"
