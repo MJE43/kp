@@ -8,7 +8,11 @@ const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'], variable: '-
 export const metadata: Metadata = {
   title: 'Your App Name',
   description: 'Your app description',
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
