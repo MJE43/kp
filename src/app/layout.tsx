@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable} font-sans`}>
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-12 gap-6 mx-auto px-10 sm:px-12 lg:px-14">
           {children}
         </div>
       </body>

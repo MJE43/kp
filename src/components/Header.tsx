@@ -14,8 +14,8 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white py-4">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white py-6">
+      <div className="container mx-auto px-10 sm:px-12 lg:px-14">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl sm:text-3xl font-bold text-white hover:opacity-80 transition-opacity duration-300">
             K.P. Power
