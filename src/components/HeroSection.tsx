@@ -37,10 +37,10 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   return (
     <section className="bg-[#0A2342] py-16">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8">
+        <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8 md:p-12">
           <div className="md:w-3/5 text-center md:text-left pr-8">
             <MotionH1 
-              className="text-5xl font-bold mb-4 text-[#0A2342]"
+              className="text-7xl font-extrabold mb-6 text-[#0A2342] leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -48,7 +48,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               K.P. Power
             </MotionH1>
             <MotionP 
-              className="text-2xl mb-8 text-[#20A39E] font-semibold"
+              className="text-3xl mb-8 text-[#20A39E] font-semibold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -56,26 +56,26 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               Your Friendly Neighborhood Electrician in Tucson, Arizona
             </MotionP>
             <MotionDiv 
-              className="mb-8"
+              className="mb-10 space-y-4 md:space-y-0 md:space-x-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <a
                 href={`tel:${phoneNumber}`}
-                className="bg-[#FFD100] text-[#0A2342] font-bold py-3 px-6 rounded-full mr-4 hover:bg-[#20A39E] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FFD100] focus:ring-offset-2 transition-colors duration-300 text-lg"
+                className="inline-block bg-[#FFD100] text-[#0A2342] font-bold py-4 px-8 rounded-full hover:bg-[#20A39E] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FFD100] focus:ring-offset-2 transition-all duration-300 text-xl shadow-md"
               >
                 Call Kyle: {phoneNumber}
               </a>
               <Link
                 href="/contact"
-                className="bg-[#20A39E] text-white font-bold py-3 px-6 rounded-full hover:bg-[#0A2342] focus:outline-none focus:ring-2 focus:ring-[#20A39E] focus:ring-offset-2 transition-colors duration-300 text-lg"
+                className="inline-block bg-[#20A39E] text-white font-bold py-4 px-8 rounded-full hover:bg-[#0A2342] focus:outline-none focus:ring-2 focus:ring-[#20A39E] focus:ring-offset-2 transition-all duration-300 text-xl shadow-md mt-4 md:mt-0"
               >
                 Schedule a Visit
               </Link>
             </MotionDiv>
             <MotionP 
-              className="text-[#333333] italic"
+              className="text-[#333333] italic text-lg"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -93,10 +93,10 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
           >
             <Image
               src="/images/KylePrice.jpeg"
-              alt="Kyle Price, your local electrician"
-              width={400}
-              height={400}
-              className="rounded-lg shadow-md w-full h-auto"
+              alt="Kyle Price, your local electrician in Tucson, Arizona"
+              width={500}
+              height={500}
+              className="rounded-lg shadow-lg w-full h-auto"
               loading="lazy"
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
