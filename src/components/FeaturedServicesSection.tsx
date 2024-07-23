@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon } from '@heroicons/react/24/outline';
+
 interface ServiceInfo {
   title: string;
   description: string;
