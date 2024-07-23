@@ -17,7 +17,7 @@ const Header: React.FC = () => {
     <header className="bg-blue-900 text-white py-4">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl sm:text-3xl font-bold">
+          <Link href="/" className="text-2xl sm:text-3xl font-bold text-white hover:text-gray-200 transition-colors duration-300">
             K.P. Power
           </Link>
           <nav className="hidden md:block">
