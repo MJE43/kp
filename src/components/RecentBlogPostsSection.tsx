@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { FaBolt, FaLightbulb, FaShieldAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -30,28 +30,20 @@ export default function RecentBlogPostsSection() {
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold mb-12 text-center text-blue-900"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           Latest from Our Blog
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
-            <motion.div 
+            <div 
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-blue-100"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100"
             >
               <div className="flex items-center mb-4">
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <post.icon className="text-3xl text-blue-500 mr-3" />
-                </motion.div>
+                <post.icon className="text-3xl text-blue-500 mr-3" />
                 <h3 className="text-xl font-semibold text-blue-900">
                   {post.title}
                 </h3>
@@ -59,18 +51,13 @@ export default function RecentBlogPostsSection() {
               <p className="mb-4 text-gray-700">
                 {post.excerpt}
               </p>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Link
+                href={post.link}
+                className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
               >
-                <Link
-                  href={post.link}
-                  className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
-                >
-                  Read More
-                </Link>
-              </motion.div>
-            </motion.div>
+                Read More
+              </Link>
+            </div>
           ))}
         </div>
       </div>
