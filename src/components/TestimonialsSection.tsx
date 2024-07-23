@@ -24,6 +24,7 @@ TestimonialCard.propTypes = {
 };
 
 interface Testimonial {
+  id: string;
   quote: string;
   author: string;
 }
@@ -31,14 +32,17 @@ interface Testimonial {
 export function TestimonialsSection(): React.ReactElement {
   const testimonials: Testimonial[] = [
     {
+      id: "1",
       quote: "Kyle did an amazing job upgrading our home's electrical system. Professional and efficient!",
       author: "Sarah J., Phoenix"
     },
     {
+      id: "2",
       quote: "I highly recommend Kyle for any residential electrical needs. He's responsive and knowledgeable.",
       author: "Mark T., Scottsdale"
     },
     {
+      id: "3",
       quote: "Kyle's attention to detail and commitment to safety impressed me. Great service at a fair price!",
       author: "Emily R., Tucson"
     }
@@ -51,8 +55,8 @@ export function TestimonialsSection(): React.ReactElement {
           What Our Customers Say
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+          {testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} {...testimonial} />
           ))}
         </div>
       </div>
