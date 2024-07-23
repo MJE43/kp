@@ -105,10 +105,15 @@ const EnhancedCTASection: React.FC = () => {
         {['Residential', 'Commercial', 'Emergency'].map((service) => (
           <Card
             key={service}
-            className="bg-slate-100 bg-opacity-10 backdrop-filter backdrop-blur-lg text-white hover:scale-105 transition-all duration-300"
+            className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white 
+                       hover:scale-105 hover:bg-opacity-20 transition-all duration-300 
+                       shadow-lg hover:shadow-xl"
           >
             <CardHeader>
-              <Zap className="w-12 h-12 mb-4 text-blue-600" />
+              <div className="w-12 h-12 mb-4 mx-auto relative">
+                <Zap className="w-full h-full text-blue-400" />
+                <div className="absolute inset-0 bg-blue-400 filter blur-md opacity-50" />
+              </div>
               <CardTitle className="text-xl font-semibold">{service} Services</CardTitle>
             </CardHeader>
             <CardContent>
