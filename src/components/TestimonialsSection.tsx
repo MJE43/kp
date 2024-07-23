@@ -31,7 +31,7 @@ interface Testimonial {
   author: string;
 }
 
-export function TestimonialsSection(): React.ReactElement {
+export const TestimonialsSection = (): React.ReactElement => {
   const testimonials: Testimonial[] = [
     {
       id: "1",
