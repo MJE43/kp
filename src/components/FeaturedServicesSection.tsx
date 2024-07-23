@@ -38,7 +38,15 @@ export default function FeaturedServicesSection() {
   );
 }
 
-function ServiceCard({ icon, title, description }) {
+import React from 'react';
+
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
       <div className="flex justify-center mb-4">{icon}</div>
