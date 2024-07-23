@@ -14,17 +14,17 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-primary text-white">
+    <header className="bg-navy-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl sm:text-3xl font-bold font-heading text-gray-100">
+          <Link href="/" className="text-2xl sm:text-3xl font-bold font-heading text-white">
             K.P. Power
           </Link>
           <nav className="hidden md:block">
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-6">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="hover:text-gray-300 transition-colors duration-300">
+                  <Link href={item.href} className="text-white hover:text-gray-300 transition-colors duration-300">
                     {item.name}
                   </Link>
                 </li>
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-2 px-4 text-base font-medium text-white hover:text-gray-300 hover:bg-primary-dark transition-colors duration-300"
+                    className="block py-2 px-4 text-base font-medium text-white hover:text-gray-300 hover:bg-navy-800 transition-colors duration-300"
                     onClick={() => {
                       setMobileMenuOpen(false);
                     }}
