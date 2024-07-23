@@ -27,23 +27,23 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-background-start to-background-end text-text-light font-sans text-base font-normal min-h-screen leading-relaxed tracking-wide;
+    @apply bg-gradient-to-br from-background-start to-background-end text-text-light font-sans text-base font-normal min-h-screen leading-normal;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold text-text-light tracking-normal leading-tight;
+    @apply font-heading font-bold text-text-light;
   }
 
   h1 {
-    @apply text-h1 mb-6 leading-tight;
+    @apply text-4xl sm:text-5xl md:text-6xl mb-6;
   }
 
   h2 {
-    @apply text-h2 mb-5 leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl mb-5;
   }
 
   h3 {
-    @apply text-h3 mb-4 leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl mb-4;
   }
 
   a {
@@ -59,7 +59,7 @@
   }
 
   section {
-    @apply py-20 sm:py-24 md:py-28;
+    @apply py-12 sm:py-16 md:py-20;
   }
 }
 
@@ -69,7 +69,7 @@
   }
 
   .container {
-    @apply max-w-7xl mx-auto px-10 sm:px-12 lg:px-14;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-spacing {
