@@ -8,11 +8,11 @@
   }
 
   a {
-    @apply text-accent hover:text-blue-700;
+    @apply text-accent hover:text-blue-400;
   }
 
   button {
-    @apply bg-accent text-white hover:bg-blue-600;
+    @apply bg-accent text-white hover:bg-blue-400;
   }
 }
 
