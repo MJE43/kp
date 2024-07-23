@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Roboto, Oswald } from 'next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import '../styles/globals.css';
 
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const roboto = Roboto({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-roboto' });
-const oswald = Oswald({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-oswald' });
 
 export const metadata: Metadata = {
   title: 'Your App Name',
@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className={`${roboto.variable} ${oswald.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} ${roboto.variable} font-sans`}>{children}</body>
     </html>
   );
 }
