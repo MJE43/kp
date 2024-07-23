@@ -3,32 +3,43 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+  :root {
+    --color-background: 15 23 42; /* #0F172A */
+    --color-foreground: 255 255 255; /* #FFFFFF */
+    --color-accent: 59 130 246; /* #3B82F6 */
+    --color-secondary-background: 241 245 249; /* #F1F5F9 */
+  }
+
   body {
-    @apply bg-background text-foreground font-sans text-body font-normal;
+    @apply bg-[#0F172A] text-white font-sans text-body font-normal;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-white font-bold;
   }
 
   h1 {
-    @apply text-heading-1 font-bold mb-6;
+    @apply text-4xl mb-6;
   }
 
   h2 {
-    @apply text-heading-2 font-bold mb-4;
+    @apply text-3xl mb-4;
   }
 
   h3 {
-    @apply text-heading-3 font-bold mb-3;
+    @apply text-2xl mb-3;
   }
 
   h4 {
-    @apply text-heading-4 font-bold mb-2;
+    @apply text-xl mb-2;
   }
 
   a {
-    @apply text-accent hover:text-blue-400 transition-colors duration-200;
+    @apply text-[#3B82F6] hover:text-blue-400 transition-colors duration-200;
   }
 
   button {
-    @apply bg-accent text-white hover:bg-blue-400 transition-colors duration-200 py-2 px-4 rounded;
+    @apply bg-[#3B82F6] text-white hover:bg-blue-400 transition-colors duration-200 py-2 px-4 rounded;
   }
 
   p {
@@ -38,7 +49,7 @@
 
 @layer components {
   .secondary-bg {
-    @apply bg-secondary-background;
+    @apply bg-[#F1F5F9];
   }
 
   .container {

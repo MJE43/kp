@@ -35,9 +35,9 @@ const EnhancedCTASection: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#0F172A] py-20 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-grid-white/[0.05]" />
-      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-500 to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#3B82F6] to-transparent" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -45,11 +45,11 @@ const EnhancedCTASection: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="relative max-w-4xl mx-auto text-center"
       >
-        <ElectricalIcon className="w-24 h-24 mx-auto mb-8 text-yellow-400" />
+        <ElectricalIcon className="w-24 h-24 mx-auto mb-8 text-[#3B82F6]" />
         <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
           Illuminate Your World with Expert Solutions
         </h2>
-        <p className="text-xl text-blue-100 mb-10">
+        <p className="text-xl text-[#F1F5F9] mb-10">
           Experience the power of professional electrical services. 
           Get your comprehensive, no-obligation quote today and light up your future!
         </p>
@@ -58,7 +58,7 @@ const EnhancedCTASection: React.FC = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-yellow-400 text-blue-900 rounded-full font-bold text-lg shadow-lg hover:bg-yellow-300 transition duration-300 flex items-center"
+            className="px-8 py-4 bg-[#3B82F6] text-white rounded-full font-bold text-lg shadow-lg hover:bg-blue-400 transition duration-300 flex items-center"
             onClick={handleEstimateClick}
           >
             Request Free Estimate
@@ -67,7 +67,7 @@ const EnhancedCTASection: React.FC = () => {
             </motion.div>
           </motion.button>
           
-          <a href="tel:+1234567890" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white hover:text-blue-700 transition duration-300 flex items-center">
+          <a href="tel:+1234567890" className="px-8 py-4 bg-transparent border-2 border-[#3B82F6] text-[#3B82F6] rounded-full font-bold text-lg hover:bg-[#3B82F6] hover:text-white transition duration-300 flex items-center">
             <Phone className="mr-2 h-5 w-5" />
             Call Now
           </a>
@@ -79,11 +79,11 @@ const EnhancedCTASection: React.FC = () => {
           <motion.div
             key={service}
             whileHover={{ scale: 1.05 }}
-            className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-white"
+            className="bg-[#F1F5F9] bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-white"
           >
-            <Zap className="w-12 h-12 mb-4 text-yellow-400" />
+            <Zap className="w-12 h-12 mb-4 text-[#3B82F6]" />
             <h3 className="text-xl font-semibold mb-2">{service} Services</h3>
-            <p className="text-blue-100">Expert solutions for all your {service.toLowerCase()} electrical needs.</p>
+            <p className="text-[#F1F5F9]">Expert solutions for all your {service.toLowerCase()} electrical needs.</p>
           </motion.div>
         ))}
       </div>
