@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { Button } from "@/components/ui/button";
 import { LightningBoltIcon, WrenchIcon, LightBulbIcon } from '@radix-ui/react-icons';
 
 interface ServiceInfo {
