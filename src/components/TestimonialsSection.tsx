@@ -22,7 +22,7 @@ interface Testimonial {
   author: string;
 }
 
-export default function TestimonialsSection() {
+export default function TestimonialsSection(): React.ReactElement {
   const testimonials: Testimonial[] = [
     {
       quote: "Kyle did an amazing job upgrading our home's electrical system. Professional and efficient!",
