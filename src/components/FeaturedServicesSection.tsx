@@ -1,5 +1,12 @@
+import React from 'react';
 import Link from 'next/link';
 import { FaBolt, FaPlug, FaLightbulb } from 'react-icons/fa';
+
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
 
 export default function FeaturedServicesSection() {
   return (
