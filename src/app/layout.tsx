@@ -18,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${roboto.variable} font-sans`}>{children}</body>
+      <body className={`${inter.variable} ${roboto.variable} font-sans`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
