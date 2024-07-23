@@ -15,12 +15,12 @@ export default function FeaturedServicesSection() {
     {
       title: "Electrical Repairs",
       description: "Quick and reliable fixes for all your home electrical issues.",
-      icon: <WrenchIcon className="w-12 h-12 text-blue-500" />,
+      icon: <WrenchScrewdriverIcon className="w-12 h-12 text-blue-500" />,
     },
     {
       title: "Wiring & Rewiring",
       description: "Safe and up-to-code wiring solutions for new homes and renovations.",
-      icon: <LightningBoltIcon className="w-12 h-12 text-blue-500" />, // Corrected icon
+      icon: <BoltIcon className="w-12 h-12 text-blue-500" />,
     },
     {
       title: "Lighting Installation",
