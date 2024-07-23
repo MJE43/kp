@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { Button } from "@/components/ui/button";
 
 const MotionDiv = dynamic(() => import('framer-motion').then((mod) => mod.motion.div), { ssr: false });
 const MotionH1 = dynamic(() => import('framer-motion').then((mod) => mod.motion.h1), { ssr: false });
@@ -24,9 +25,9 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
 
   if (!isMounted) {
     return (
-      <section className="bg-[#0A2342] py-16">
+      <section className="bg-slate-900 py-16">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center bg-[#F4F4F4] rounded-lg shadow-md p-8">
+          <div className="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg shadow-md p-8">
             {/* Placeholder content */}
           </div>
         </div>
@@ -35,12 +36,12 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   }
 
   return (
-    <section className="bg-[#0F172A] py-16">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row items-center bg-[#F1F5F9] rounded-lg shadow-md p-8 md:p-12">
-          <div className="md:w-3/5 text-center md:text-left pr-8">
+    <section className="bg-slate-900 py-16">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg shadow-lg p-8 md:p-12">
+          <div className="md:w-3/5 text-center md:text-left md:pr-8">
             <MotionH1 
-              className="text-7xl font-extrabold mb-6 text-[#0F172A] leading-tight"
+              className="text-6xl md:text-7xl font-extrabold mb-6 text-slate-900 leading-tight"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -48,7 +49,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               K.P. Power
             </MotionH1>
             <MotionP 
-              className="text-3xl mb-8 text-[#3B82F6] font-semibold"
+              className="text-2xl md:text-3xl mb-8 text-blue-600 font-semibold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -56,26 +57,33 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               Your Friendly Neighborhood Electrician in Tucson, Arizona
             </MotionP>
             <MotionDiv 
-              className="mb-10 space-y-4 md:space-y-0 md:space-x-4"
+              className="mb-10 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <a
-                href={`tel:${phoneNumber}`}
-                className="inline-block bg-[#3B82F6] text-white font-bold py-4 px-8 rounded-full hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:ring-offset-2 transition-all duration-300 text-xl shadow-md"
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg shadow-md transition-all duration-300"
               >
-                Call Kyle: {phoneNumber}
-              </a>
-              <Link
-                href="/contact"
-                className="inline-block bg-[#0F172A] text-white font-bold py-4 px-8 rounded-full hover:bg-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#0F172A] focus:ring-offset-2 transition-all duration-300 text-xl shadow-md mt-4 md:mt-0"
+                <a href={`tel:${phoneNumber}`}>
+                  Call Kyle: {phoneNumber}
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="bg-slate-900 text-white hover:bg-blue-600 hover:text-white font-bold rounded-full text-lg shadow-md transition-all duration-300 mt-4 md:mt-0"
               >
-                Schedule a Visit
-              </Link>
+                <Link href="/contact">
+                  Schedule a Visit
+                </Link>
+              </Button>
             </MotionDiv>
             <MotionP 
-              className="text-[#0F172A] italic text-lg"
+              className="text-slate-900 italic text-lg"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}

@@ -1,7 +1,7 @@
 'use client';
 
 import { Star } from 'lucide-react';
-import PropTypes from 'prop-types';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface TestimonialCardProps {
   quote: string;
@@ -9,21 +9,20 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => (
-  <div className="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-opacity-20 hover:scale-105">
-    <div className="flex justify-center mb-4">
-      {[...Array(5)].map((_, i) => (
-        <Star key={i} className="text-yellow-400 w-6 h-6 fill-current" />
-      ))}
-    </div>
-    <p className="mb-4 text-gray-200 italic text-lg leading-relaxed">&ldquo;{quote}&rdquo;</p>
-    <p className="font-semibold text-blue-400">{author}</p>
-  </div>
+  <Card className="bg-white bg-opacity-10 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-20 hover:scale-105">
+    <CardHeader>
+      <div className="flex justify-center mb-4">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="text-yellow-400 w-6 h-6 fill-current" />
+        ))}
+      </div>
+    </CardHeader>
+    <CardContent>
+      <p className="mb-4 text-gray-200 italic text-lg leading-relaxed">&ldquo;{quote}&rdquo;</p>
+      <CardTitle className="font-semibold text-blue-400">{author}</CardTitle>
+    </CardContent>
+  </Card>
 );
-
-TestimonialCard.propTypes = {
-  quote: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-};
 
 interface Testimonial {
   id: string;
@@ -51,7 +50,7 @@ export const TestimonialsSection = (): React.ReactElement => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#0F172A] to-[#1E293B]">
+    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center text-white">
           What Our Customers Say
