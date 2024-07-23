@@ -8,32 +8,60 @@
   }
 
   h1 {
-    @apply text-heading-1 font-bold;
+    @apply text-heading-1 font-bold mb-6;
   }
 
   h2 {
-    @apply text-heading-2 font-bold;
+    @apply text-heading-2 font-bold mb-4;
   }
 
   h3 {
-    @apply text-heading-3 font-bold;
+    @apply text-heading-3 font-bold mb-3;
   }
 
   h4 {
-    @apply text-heading-4 font-bold;
+    @apply text-heading-4 font-bold mb-2;
   }
 
   a {
-    @apply text-accent hover:text-blue-400;
+    @apply text-accent hover:text-blue-400 transition-colors duration-200;
   }
 
   button {
-    @apply bg-accent text-white hover:bg-blue-400;
+    @apply bg-accent text-white hover:bg-blue-400 transition-colors duration-200 py-2 px-4 rounded;
+  }
+
+  p {
+    @apply mb-4;
   }
 }
 
 @layer components {
   .secondary-bg {
     @apply bg-secondary-background;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .grid-layout {
+    @apply grid grid-cols-1 md:grid-cols-12 gap-4;
+  }
+
+  .col-span-full {
+    @apply col-span-1 md:col-span-12;
+  }
+
+  .col-span-main {
+    @apply col-span-1 md:col-span-8;
+  }
+
+  .col-span-sidebar {
+    @apply col-span-1 md:col-span-4;
+  }
+
+  .section {
+    @apply my-8;
   }
 }

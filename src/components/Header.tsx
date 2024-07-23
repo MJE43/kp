@@ -14,17 +14,17 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-navy-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+    <header className="bg-blue-900 text-white py-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl sm:text-3xl font-bold font-heading text-white">
+          <Link href="/" className="text-2xl sm:text-3xl font-bold">
             K.P. Power
           </Link>
           <nav className="hidden md:block">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-8">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-white hover:text-gray-300 transition-colors duration-300">
+                  <Link href={item.href} className="text-white hover:text-gray-300 transition-colors duration-300 text-lg">
                     {item.name}
                   </Link>
                 </li>
@@ -52,26 +52,24 @@ const Header: React.FC = () => {
             </button>
           </div>
         </div>
-        {mobileMenuOpen && (
-          <nav className="md:hidden mt-4">
-            <ul className="space-y-2">
-              {navItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="block py-2 px-4 text-base font-medium text-white hover:text-gray-300 hover:bg-navy-800 transition-colors duration-300"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
       </div>
+      {mobileMenuOpen && (
+        <nav className="md:hidden mt-4 container mx-auto px-4 sm:px-6 lg:px-8">
+          <ul className="space-y-2">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className="block py-2 text-lg text-white hover:text-gray-300 transition-colors duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 };
