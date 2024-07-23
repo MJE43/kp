@@ -36,80 +36,70 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   }
 
   return (
-    <section className="bg-slate-900 py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg shadow-lg p-8 md:p-12">
-          <div className="md:w-3/5 text-center md:text-left md:pr-8">
-            <MotionH1 
-              className="text-6xl md:text-7xl font-extrabold mb-6 text-slate-900 leading-tight"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              K.P. Power
-            </MotionH1>
-            <MotionP 
-              className="text-2xl md:text-3xl mb-8 text-blue-600 font-semibold"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              Your Friendly Neighborhood Electrician in Tucson, Arizona
-            </MotionP>
-            <MotionDiv 
-              className="mb-10 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg shadow-md transition-all duration-300"
-              >
-                <a href={`tel:${phoneNumber}`}>
-                  Call Kyle: {phoneNumber}
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="bg-slate-900 text-white hover:bg-blue-600 hover:text-white font-bold rounded-full text-lg shadow-md transition-all duration-300 mt-4 md:mt-0"
-              >
-                <Link href="/contact">
-                  Schedule a Visit
-                </Link>
-              </Button>
-            </MotionDiv>
-            <MotionP 
-              className="text-slate-900 italic text-lg"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              "I'm Kyle, your local electrician. With over 15 years of
-              experience, I'm here to solve all your electrical needs
-              personally."
-            </MotionP>
-          </div>
-          <MotionDiv 
-            className="md:w-2/5 mt-8 md:mt-0"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <Image
+        src="/images/herosectionimage.jpg"
+        alt="Electricians reviewing a construction site"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+      <div className="container mx-auto px-4 z-10">
+        <div className="max-w-3xl">
+          <MotionH1 
+            className="text-6xl md:text-7xl font-extrabold mb-6 text-white leading-tight"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <Image
-              src="/images/KylePrice.jpeg"
-              alt="Kyle Price, your local electrician in Tucson, Arizona"
-              width={500}
-              height={500}
-              className="rounded-lg shadow-lg w-full h-auto"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAACklEQVR4nGMAAQAABQABDQottAAAAABJRU5ErkJggg=="
-            />
+            K.P. Power
+          </MotionH1>
+          <MotionP 
+            className="text-2xl md:text-3xl mb-8 text-blue-300 font-semibold"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+          >
+            Your Friendly Neighborhood Electrician in Tucson, Arizona
+          </MotionP>
+          <MotionDiv 
+            className="mb-10 space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+          >
+            <Button
+              asChild
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              <a href={`tel:${phoneNumber}`}>
+                Call Kyle: {phoneNumber}
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+            >
+              <Link href="/contact">
+                Schedule a Visit
+              </Link>
+            </Button>
           </MotionDiv>
+          <MotionP 
+            className="text-white italic text-xl max-w-2xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+          >
+            "I'm Kyle, your local electrician. With over 15 years of
+            experience, I'm here to solve all your electrical needs
+            personally."
+          </MotionP>
         </div>
       </div>
     </section>
