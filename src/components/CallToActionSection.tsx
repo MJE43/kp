@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Zap, ArrowRight, Phone } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 interface ElectricalIconProps {
   className?: string;
@@ -35,9 +37,9 @@ const EnhancedCTASection: React.FC = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#0F172A] py-20 px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-slate-900 py-20 px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-grid-white/[0.05]" />
-      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#3B82F6] to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-blue-600 to-transparent" />
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -45,46 +47,55 @@ const EnhancedCTASection: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="relative max-w-4xl mx-auto text-center"
       >
-        <ElectricalIcon className="w-24 h-24 mx-auto mb-8 text-[#3B82F6]" />
+        <ElectricalIcon className="w-24 h-24 mx-auto mb-8 text-blue-600" />
         <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
           Illuminate Your World with Expert Solutions
         </h2>
-        <p className="text-xl text-[#F1F5F9] mb-10">
+        <p className="text-xl text-slate-100 mb-10">
           Experience the power of professional electrical services. 
           Get your comprehensive, no-obligation quote today and light up your future!
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-[#3B82F6] text-white rounded-full font-bold text-lg shadow-lg hover:bg-blue-400 transition duration-300 flex items-center"
+          <Button
+            size="lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 flex items-center"
             onClick={handleEstimateClick}
           >
             Request Free Estimate
             <motion.div animate={controls}>
               <ArrowRight className="ml-2 h-6 w-6" />
             </motion.div>
-          </motion.button>
+          </Button>
           
-          <a href="tel:+1234567890" className="px-8 py-4 bg-transparent border-2 border-[#3B82F6] text-[#3B82F6] rounded-full font-bold text-lg hover:bg-[#3B82F6] hover:text-white transition duration-300 flex items-center">
-            <Phone className="mr-2 h-5 w-5" />
-            Call Now
-          </a>
+          <Button
+            size="lg"
+            variant="outline"
+            className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold rounded-full text-lg transition-all duration-300 flex items-center"
+            asChild
+          >
+            <a href="tel:+1234567890">
+              <Phone className="mr-2 h-5 w-5" />
+              Call Now
+            </a>
+          </Button>
         </div>
       </motion.div>
 
       <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {['Residential', 'Commercial', 'Emergency'].map((service) => (
-          <motion.div
+          <Card
             key={service}
-            whileHover={{ scale: 1.05 }}
-            className="bg-[#F1F5F9] bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-xl p-6 text-white"
+            className="bg-slate-100 bg-opacity-10 backdrop-filter backdrop-blur-lg text-white hover:scale-105 transition-all duration-300"
           >
-            <Zap className="w-12 h-12 mb-4 text-[#3B82F6]" />
-            <h3 className="text-xl font-semibold mb-2">{service} Services</h3>
-            <p className="text-[#F1F5F9]">Expert solutions for all your {service.toLowerCase()} electrical needs.</p>
-          </motion.div>
+            <CardHeader>
+              <Zap className="w-12 h-12 mb-4 text-blue-600" />
+              <CardTitle className="text-xl font-semibold">{service} Services</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-100">Expert solutions for all your {service.toLowerCase()} electrical needs.</p>
+            </CardContent>
+          </Card>
         ))}
       </div>
 
