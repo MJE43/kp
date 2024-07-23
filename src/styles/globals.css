@@ -4,53 +4,63 @@
 
 @layer base {
   :root {
-    --color-background: 15 23 42; /* #0F172A */
-    --color-foreground: 255 255 255; /* #FFFFFF */
-    --color-accent: 59 130 246; /* #3B82F6 */
-    --color-secondary-background: 241 245 249; /* #F1F5F9 */
-    --color-complementary: 255 165 0; /* #FFA500 */
+    --color-primary: 30 58 138; /* #1E3A8A */
+    --color-secondary: 59 130 246; /* #3B82F6 */
+    --color-accent: 249 115 22; /* #F97316 */
+    --color-background-start: 15 23 42; /* #0F172A */
+    --color-background-end: 30 58 138; /* #1E3A8A */
+    --color-text-light: 255 255 255; /* #FFFFFF */
+    --color-text-dark: 15 23 42; /* #0F172A */
   }
 
   body {
-    @apply bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] text-white font-sans text-body font-normal min-h-screen;
+    @apply bg-gradient-to-br from-background-start to-background-end text-text-light font-sans text-base font-normal min-h-screen;
   }
 
-  h1, h2, h3, h4 {
-    @apply text-white font-bold;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-text-light;
   }
 
   h1 {
-    @apply text-4xl mb-6;
+    @apply text-4xl sm:text-5xl mb-6;
   }
 
   h2 {
-    @apply text-3xl mb-4;
+    @apply text-3xl sm:text-4xl mb-5;
   }
 
   h3 {
-    @apply text-2xl mb-3;
+    @apply text-2xl sm:text-3xl mb-4;
   }
 
   h4 {
-    @apply text-xl mb-2;
+    @apply text-xl sm:text-2xl mb-3;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl mb-2;
+  }
+
+  h6 {
+    @apply text-base sm:text-lg mb-2;
   }
 
   a {
-    @apply text-[#3B82F6] hover:text-blue-400 transition-colors duration-200;
+    @apply text-secondary hover:text-accent transition-colors duration-200;
   }
 
   button {
-    @apply bg-[#3B82F6] text-white hover:bg-blue-400 transition-colors duration-200 py-2 px-4 rounded;
+    @apply bg-secondary text-text-light hover:bg-accent transition-colors duration-200 py-2 px-4 rounded;
   }
 
   p {
-    @apply mb-4;
+    @apply mb-4 text-base sm:text-lg;
   }
 }
 
 @layer components {
   .secondary-bg {
-    @apply bg-[#F1F5F9];
+    @apply bg-secondary text-text-dark;
   }
 
   .container {
@@ -58,7 +68,7 @@
   }
 
   .grid-layout {
-    @apply grid grid-cols-1 md:grid-cols-12 gap-4;
+    @apply grid grid-cols-1 md:grid-cols-12 gap-6;
   }
 
   .col-span-full {
@@ -74,6 +84,6 @@
   }
 
   .section {
-    @apply my-8;
+    @apply my-12;
   }
 }

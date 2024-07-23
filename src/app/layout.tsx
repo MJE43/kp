@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { Montserrat, Open_Sans } from 'next/font/google';
 import '../styles/globals.css';
+import '@fontsource/montserrat/400.css';
+ import '@fontsource/montserrat/700.css';
+ import '@fontsource/open-sans/400.css';
+ import '@fontsource/open-sans/700.css';
 
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
 const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' });

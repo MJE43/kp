@@ -8,21 +8,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0F172A', // dark navy blue
-        foreground: '#FFFFFF', // white
-        accent: '#3B82F6', // bright blue
-        'secondary-background': '#F1F5F9', // light gray
-        border: '#E5E7EB',
+        primary: '#1E3A8A',
+        secondary: '#3B82F6',
+        accent: '#F97316',
+        'background-start': '#0F172A',
+        'background-end': '#1E3A8A',
+        'text-light': '#FFFFFF',
+        'text-dark': '#0F172A',
       },
       fontFamily: {
-        sans: ['Inter', 'Roboto', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
-        'heading-1': '2.5rem',
-        'heading-2': '2rem',
-        'heading-3': '1.75rem',
-        'heading-4': '1.5rem',
-        'body': '1rem',
+        'base': '1rem',
+        'lg': '1.125rem',
+        'xl': '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
       },
       fontWeight: {
         normal: '400',
