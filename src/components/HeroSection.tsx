@@ -46,11 +46,11 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/70 to-transparent"></div>
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl">
           <MotionH1 
-            className="text-6xl md:text-7xl font-extrabold mb-6 text-white leading-tight"
+            className="text-7xl md:text-8xl font-extrabold mb-6 text-white leading-tight"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             K.P. Power
           </MotionH1>
           <MotionP 
-            className="text-2xl md:text-3xl mb-8 text-[#FFA500] font-semibold"
+            className="text-2xl md:text-3xl mb-8 text-[#F97316] font-semibold"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
             <Button
               asChild
               size="lg"
-              className="bg-[#FFA500] hover:bg-[#FFB732] text-[#0F172A] font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-[#F97316] hover:bg-[#FB923C] text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <a href={`tel:${phoneNumber}`} aria-label="Call Kyle">
                 Call Kyle: {phoneNumber}
@@ -84,7 +84,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               asChild
               size="lg"
               variant="outline"
-              className="bg-transparent border-2 border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-[#0F172A] font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="bg-transparent border-2 border-white text-white hover:bg-white/20 font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <Link href="/contact" aria-label="Schedule a Visit">
                 Schedule a Visit
