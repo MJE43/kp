@@ -47,7 +47,7 @@ export default function FeaturedServicesSection() {
           ))}
         </div>
         <div className="text-center">
-          <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white">
+          <Button asChild variant="default">
             <Link href="/services">
               View All Residential Services
             </Link>
