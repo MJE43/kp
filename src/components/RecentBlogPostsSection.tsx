@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Link from 'next/link';
 import { FaBolt, FaLightbulb, FaShieldAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -24,7 +24,7 @@ const blogPosts = [
   },
 ];
 
-export default function RecentBlogPostsSection() {
+const RecentBlogPostsSection: React.FC = () => {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
@@ -63,4 +63,6 @@ export default function RecentBlogPostsSection() {
       </div>
     </section>
   );
-}
+};
+
+export default RecentBlogPostsSection;
