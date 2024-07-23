@@ -14,17 +14,17 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="bg-blue-900 text-white py-4">
+    <header className="bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white py-4">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-2xl sm:text-3xl font-bold text-white hover:text-gray-200 transition-colors duration-300">
+          <Link href="/" className="text-2xl sm:text-3xl font-bold text-white hover:opacity-80 transition-opacity duration-300">
             K.P. Power
           </Link>
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-white hover:text-gray-300 transition-colors duration-300 text-lg">
+                  <Link href={item.href} className="text-white hover:opacity-80 transition-opacity duration-300 text-lg">
                     {item.name}
                   </Link>
                 </li>
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-2 text-lg text-white hover:text-gray-300 transition-colors duration-300"
+                  className="block py-2 text-lg text-white hover:opacity-80 transition-opacity duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
