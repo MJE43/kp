@@ -53,20 +53,22 @@ const Header: React.FC = () => {
         </div>
       </div>
       {mobileMenuOpen && (
-        <nav className="md:hidden mt-2 container mx-auto px-4 sm:px-6 lg:px-8">
-          <ul className="space-y-2">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="block py-2 text-base text-white hover:opacity-80 transition-opacity duration-300"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav className="md:hidden mt-2">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <ul className="space-y-2">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="block py-2 text-base text-white hover:opacity-80 transition-opacity duration-300"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       )}
     </header>

@@ -27,8 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${openSans.variable} font-sans`}>
-        <div className="min-h-screen">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8">
             {children}
           </div>
         </div>
