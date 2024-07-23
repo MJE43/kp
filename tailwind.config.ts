@@ -17,8 +17,9 @@ const config: Config = {
         'text-dark': '#0F172A',
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
-        heading: ['Voltage', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif'],
+        noir: ['Noir', 'sans-serif'],
+        georgia: ['Georgia', 'serif'],
       },
       fontSize: {
         'base': '16px',
