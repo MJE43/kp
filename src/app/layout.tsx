@@ -27,9 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <body className="font-sans antialiased bg-gradient-to-br from-background-start to-background-end min-h-screen flex flex-col">
-        <main className="flex-grow">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );
