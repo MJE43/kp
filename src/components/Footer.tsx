@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#00008B] text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-to-b from-blue-600 to-blue-900 text-white py-16">
+      <div className="container mx-auto px-4 max-w-7xl">
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-4 gap-12"
           variants={containerVariants}
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
           </motion.div>
         </motion.div>
         <motion.div 
-          className="mt-12 pt-8 border-t border-blue-700 text-center"
+          className="mt-12 pt-8 border-t border-blue-500/30 text-center"
           variants={itemVariants}
         >
           <p className="text-sm text-gray-300">
