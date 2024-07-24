@@ -9,7 +9,7 @@ import Layout from '@/components/Layout';
 const ValueCard = ({ icon, title, description }) => (
   <div className="bg-gray-100 p-6 rounded-lg shadow-md">
     <div className="text-orange-500 text-4xl mb-4">{icon}</div>
-    <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+    <h3 className="text-2xl font-bold mb-2 text-orange-500">{title}</h3>
     <p className="text-gray-600">{description}</p>
   </div>
 );
