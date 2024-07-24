@@ -10,7 +10,7 @@ interface ValueCardProps {
 const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
   <motion.div 
     whileHover={{ scale: 1.05 }}
-    className="bg-white p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-xl"
+    className="bg-navy-900 p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-xl"
   >
     <motion.div 
       className="text-4xl text-orange-500 mb-4"
@@ -19,8 +19,8 @@ const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
     >
       {icon}
     </motion.div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600 text-sm">{description}</p>
+    <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+    <p className="text-gray-300 text-sm">{description}</p>
   </motion.div>
 );
 

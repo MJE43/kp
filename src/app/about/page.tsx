@@ -11,15 +11,15 @@ import Layout from '@/components/Layout';
 export default function AboutPage() {
   return (
     <Layout>
-      <div className="bg-navy-900 text-white">
+      <div className="bg-gray-100 text-navy-900">
       <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: 'url("/api/placeholder/1920/1080")'}}>
-        <div className="absolute inset-0 bg-navy-900 opacity-50"></div>
+        <div className="absolute inset-0 bg-navy-900 opacity-70"></div>
         <div className="text-center z-10">
           <motion.h1 
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl font-bold mb-4"
+            className="text-6xl font-bold mb-4 text-white"
           >
             About KPPower Electrical Services
           </motion.h1>
@@ -27,14 +27,14 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-2xl"
+            className="text-2xl text-white"
           >
             Powering Tucson with excellence since 2022
           </motion.p>
         </div>
       </header>
 
-      <section className="py-20 bg-white text-navy-900">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -61,7 +61,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-orange-500 text-white">
+      <section className="py-20 bg-navy-900 text-white">
         <div className="container mx-auto px-4">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
@@ -69,7 +69,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
+            <h2 className="text-4xl font-bold mb-6 text-orange-500">Our Mission</h2>
             <p className="text-xl max-w-3xl mx-auto">
               At KPPower Electrical Services, our mission is to ensure the safety and satisfaction of our clients through excellent workmanship and personalized service. We strive to be the most trusted and reliable electrical service provider in Tucson and the surrounding communities.
             </p>
@@ -77,7 +77,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-100 text-navy-900">
+      <section className="py-20 bg-gray-200 text-navy-900">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12 text-center">Our Service Area</h2>
           <div className="flex flex-wrap items-center">
@@ -116,9 +116,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white text-navy-900">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center">Our Values</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-orange-500">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ValueCard 
               icon={<FaUserShield />} 
