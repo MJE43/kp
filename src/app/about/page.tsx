@@ -4,40 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaBolt, FaTools, FaUserShield, FaHandshake, FaGraduationCap, FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
 import Image from 'next/image';
-
-const ValueCard = ({ icon, title, description }) => (
-  <motion.div 
-    whileHover={{ scale: 1.05 }}
-    className="bg-white p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-xl"
-  >
-    <motion.div 
-      className="text-4xl text-orange-500 mb-4"
-      whileHover={{ rotate: 360 }}
-      transition={{ duration: 0.5 }}
-    >
-      {icon}
-    </motion.div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600 text-sm">{description}</p>
-  </motion.div>
-);
-
-const ScrollToTopButton = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <motion.button
-      className="fixed bottom-8 right-8 bg-orange-500 text-white p-3 rounded-full shadow-lg"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      onClick={scrollToTop}
-    >
-      <FaArrowUp />
-    </motion.button>
-  );
-};
+import ValueCard from '@/components/ValueCard';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 export default function AboutPage() {
   return (
