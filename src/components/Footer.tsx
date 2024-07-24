@@ -34,57 +34,20 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16">
+    <footer className="sticky bottom-0 bg-blue-900 text-white py-4">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-4 gap-12"
+          className="flex justify-between items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-6">KP Power and Electrical Services</h3>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              Illuminating Tucson with quality electrical services for over 15 years. Your trusted partner in power solutions.
+            <p className="text-sm text-gray-300">
+              &copy; {currentYear} KP Power and Electrical Services. All rights reserved.
             </p>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Button 
-                    variant="link" 
-                    asChild 
-                    className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
-                  >
-                    <Link href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}>
-                      {item}
-                    </Link>
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center">
-                <FaPhone className="mr-3 text-orange-400" />
-                <span>(555) 123-4567</span>
-              </li>
-              <li className="flex items-center">
-                <FaEnvelope className="mr-3 text-orange-400" />
-                <span>info@kpowerelectrical.com</span>
-              </li>
-              <li className="flex items-center">
-                <FaMapMarkerAlt className="mr-3 text-orange-400" />
-                <span>123 Main St, Tucson, AZ 85701</span>
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-semibold mb-6">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map(({ Icon, url, label }) => (
                 <motion.div
@@ -104,21 +67,35 @@ const Footer: React.FC = () => {
                       rel="noopener noreferrer"
                       aria-label={label}
                     >
-                      <Icon size={28} />
+                      <Icon size={20} />
                     </a>
                   </Button>
                 </motion.div>
               ))}
             </div>
           </motion.div>
-        </motion.div>
-        <motion.div 
-          className="mt-12 pt-8 border-t border-gray-700 text-center"
-          variants={itemVariants}
-        >
-          <p className="text-sm text-gray-300">
-            &copy; {currentYear} KP Power and Electrical Services. All rights reserved.
-          </p>
+          <motion.div variants={itemVariants}>
+            <div className="flex space-x-4">
+              <Button 
+                variant="link" 
+                asChild 
+                className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
+              >
+                <Link href="/contact">
+                  Contact Us
+                </Link>
+              </Button>
+              <Button 
+                variant="link" 
+                asChild 
+                className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
+              >
+                <Link href="/about">
+                  About Us
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </footer>

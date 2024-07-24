@@ -1,5 +1,6 @@
 'use client';
 
+import type { NextPage } from 'next';
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
@@ -17,17 +18,25 @@ import {
   BoltIcon 
 } from '@heroicons/react/24/outline';
 
-interface ServiceIconProps {
+interface Service {
+  title: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  description: string;
+  items: string[];
 }
 
-const ServiceIcon: React.FC<ServiceIconProps> = ({ icon: Icon }) => (
+interface Testimonial {
+  text: string;
+  author: string;
+}
+
+const ServiceIcon: React.FC<{ icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }> = ({ icon: Icon }) => (
   <div className="p-2 bg-blue-100 rounded-full">
     <Icon className="w-6 h-6 text-blue-600" />
   </div>
 );
 
-const ServiceCard = ({ service, index }) => {
+const ServiceCard: React.FC<{ service: Service; index: number }> = ({ service, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const controls = useAnimation();
 
@@ -88,19 +97,19 @@ const ServiceCard = ({ service, index }) => {
   );
 };
 
-const Testimonial = ({ text, author }) => (
+const TestimonialCard: React.FC<Testimonial> = ({ text, author }) => (
   <div className="bg-white p-6 rounded-lg shadow-md">
     <p className="text-gray-600 italic mb-4">"{text}"</p>
     <p className="text-gray-800 font-semibold">- {author}</p>
   </div>
 );
 
-export default function ServicesPage() {
+const ServicesPage: NextPage = () => {
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  const services = [
+  const services: Service[] = [
     {
       title: 'Residential Electrical Services',
       icon: HomeIcon,
@@ -183,7 +192,7 @@ export default function ServicesPage() {
     },
   ];
 
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       text: "K.P. Power transformed our home's electrical system. Their team was professional, efficient, and knowledgeable.",
       author: "Sarah Johnson, Phoenix Homeowner"
@@ -196,6 +205,7 @@ export default function ServicesPage() {
 
   return (
     <Layout>
+      {/* Hero Section */}
       <div className="relative h-screen">
         <Image
           src="/images/night-stock-photo.jpg"
@@ -241,12 +251,13 @@ export default function ServicesPage() {
               transition={{ delay: 0.2 }}
               className="text-2xl mb-8"
             >
-              Expert electrical solutions for home and business
+Expert electrical solutions for home and business
             </motion.p>
           </div>
         </div>
       </div>
-      
+
+      {/* Services Section */}
       <div className="container mx-auto px-4 py-12 bg-gradient-to-b from-gray-50 to-white">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
@@ -261,6 +272,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
+        {/* Testimonials Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -272,11 +284,12 @@ export default function ServicesPage() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Testimonial key={index} {...testimonial} />
+              <TestimonialCard key={index} {...testimonial} />
             ))}
           </div>
         </motion.div>
 
+        {/* Call to Action Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -304,4 +317,6 @@ export default function ServicesPage() {
       </div>
     </Layout>
   );
-}
+};
+
+export default ServicesPage;

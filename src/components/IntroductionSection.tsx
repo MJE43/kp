@@ -46,7 +46,7 @@ export default function IntroductionSection() {
   });
 
   return (
-    <section ref={ref} className="bg-[#007bff] py-16 bg-opacity-90 bg-[url('/images/subtle-pattern.png')] bg-repeat">
+    <section ref={ref} className="bg-[#1e00ff67] py-16 bg-opacity-90 bg-[url('/images/subtle-pattern.png')] bg-repeat">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
