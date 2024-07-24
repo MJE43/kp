@@ -6,10 +6,12 @@ import { FaBolt, FaTools, FaUserShield, FaHandshake, FaGraduationCap, FaMapMarke
 import Image from 'next/image';
 import ValueCard from '@/components/ValueCard';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
+import Layout from '@/components/Layout';
 
 export default function AboutPage() {
   return (
-    <div className="bg-navy-900 text-white">
+    <Layout>
+      <div className="bg-navy-900 text-white">
       <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: 'url("/api/placeholder/1920/1080")'}}>
         <div className="absolute inset-0 bg-navy-900 opacity-50"></div>
         <div className="text-center z-10">
@@ -148,6 +150,7 @@ export default function AboutPage() {
       </section>
 
       <ScrollToTopButton />
-    </div>
+      </div>
+    </Layout>
   );
 }
