@@ -1,10 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import Image from 'next/image';
 import Layout from '@/components/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import Particles from "@tsparticles/react";
+import { loadFull } from "tsparticles";
 import { 
   HomeIcon, 
   WrenchScrewdriverIcon, 
@@ -26,14 +29,34 @@ const ServiceIcon: React.FC<ServiceIconProps> = ({ icon: Icon }) => (
 
 const ServiceCard = ({ service, index }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const controls = useAnimation();
+
+  const handleHoverStart = () => {
+    controls.start({
+      scale: 1.05,
+      boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+      transition: { duration: 0.3 }
+    });
+  };
+
+  const handleHoverEnd = () => {
+    controls.start({
+      scale: 1,
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
+      transition: { duration: 0.3 }
+    });
+  };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
+      whileHover={{ scale: 1.05 }}
+      onHoverStart={handleHoverStart}
+      onHoverEnd={handleHoverEnd}
     >
-      <Card className="h-full transition-shadow duration-300 hover:shadow-lg">
+      <Card className="h-full transition-all duration-300 hover:shadow-lg hover:bg-blue-50">
         <CardHeader>
           <CardTitle className="flex items-center space-x-4">
             <ServiceIcon icon={service.icon} />
@@ -65,7 +88,18 @@ const ServiceCard = ({ service, index }) => {
   );
 };
 
+const Testimonial = ({ text, author }) => (
+  <div className="bg-white p-6 rounded-lg shadow-md">
+    <p className="text-gray-600 italic mb-4">"{text}"</p>
+    <p className="text-gray-800 font-semibold">- {author}</p>
+  </div>
+);
+
 export default function ServicesPage() {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
   const services = [
     {
       title: 'Residential Electrical Services',
@@ -149,34 +183,105 @@ export default function ServicesPage() {
     },
   ];
 
+  const testimonials = [
+    {
+      text: "K.P. Power transformed our home's electrical system. Their team was professional, efficient, and knowledgeable.",
+      author: "Sarah Johnson, Phoenix Homeowner"
+    },
+    {
+      text: "As a business owner, I can't stress enough how crucial reliable electrical work is. K.P. Power delivered beyond our expectations.",
+      author: "Michael Chen, Local Business Owner"
+    }
+  ];
+
   return (
     <Layout>
+      <div className="relative h-screen">
+        <Image
+          src="/images/night-stock-photo.jpg"
+          alt="Phoenix skyline at night"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-transparent opacity-75"></div>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          options={{
+            particles: {
+              number: { value: 80, density: { enable: true, value_area: 800 } },
+              color: { value: "#ffffff" },
+              shape: { type: "circle" },
+              opacity: { value: 0.5, random: true },
+              size: { value: 3, random: true },
+              line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+              move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+              modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            },
+            retina_detect: true
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="text-center text-white">
+            <motion.h1
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl font-bold mb-4"
+            >
+              Powering Phoenix's Future
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-2xl mb-8"
+            >
+              Expert electrical solutions for home and business
+            </motion.p>
+          </div>
+        </div>
+      </div>
+      
       <div className="container mx-auto px-4 py-12 bg-gradient-to-b from-gray-50 to-white">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-5xl font-bold mb-8 text-center text-gray-800"
+          className="text-4xl font-bold mb-8 text-center text-gray-800"
         >
           Our Electrical Services
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-xl mb-12 text-center text-gray-700 max-w-3xl mx-auto"
-        >
-          KPPower Electrical Services offers a comprehensive range of electrical solutions for residential and commercial clients in Phoenix, Arizona. Our expert team is committed to delivering high-quality, safe, and energy-efficient electrical services.
-        </motion.p>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-16 bg-blue-50 p-8 rounded-lg shadow-md"
+          className="mt-16 bg-blue-50 p-8 rounded-lg shadow-md"
+        >
+          <h3 className="text-3xl font-semibold mb-6 text-center text-gray-800">
+            What Our Clients Say
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Testimonial key={index} {...testimonial} />
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7 }}
+          className="text-center mt-16 bg-blue-100 p-8 rounded-lg shadow-md"
         >
           <h3 className="text-3xl font-semibold mb-4 text-gray-800">
             Ready to Upgrade Your Electrical Systems?
@@ -184,12 +289,17 @@ export default function ServicesPage() {
           <p className="mb-6 text-gray-700 text-lg">
             Contact us today for a free estimate on your electrical project. Our team of certified electricians is ready to bring your vision to life.
           </p>
-          <Button
-            size="lg"
-            className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Request a Free Quote
-          </Button>
+            <Button
+              size="lg"
+              className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 animate-pulse"
+            >
+              Spark Your Project
+            </Button>
+          </motion.div>
         </motion.div>
       </div>
     </Layout>
