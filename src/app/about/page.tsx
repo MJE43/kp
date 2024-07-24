@@ -27,14 +27,21 @@ export default function AboutPage() {
   return (
     <Layout>
       <div className="bg-white text-navy-900">
-        <header className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{backgroundImage: 'url("/images/architect-1080p-c_scale,w_1920.jpg")'}}>
+        <header className="h-screen flex items-center justify-center relative">
+          <Image
+            src="/images/background-darkblue.jpg"
+            alt="Background Image"
+            layout="fill"
+            objectFit="cover"
+            className="absolute inset-0"
+          />
           <div className="absolute inset-0 bg-navy-900 opacity-70"></div>
-          <div className="text-center z-10">
+          <div className="text-center z-10 text-navy-900">
             <motion.h1 
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-6xl font-bold mb-4 text-white"
+              className="text-6xl font-bold mb-4"
             >
               About K.P. Power
             </motion.h1>
@@ -49,7 +56,7 @@ export default function AboutPage() {
           </div>
         </header>
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-light-blue-100">
           <div className="container mx-auto px-4">
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
@@ -92,9 +99,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-light-blue-100 text-navy-900">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold mb-12 text-center text-orange-500">Our Values</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-navy-900">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <ValueCard 
                 icon={<FaUserShield />} 
