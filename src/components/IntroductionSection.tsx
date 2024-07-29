@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
+import subtlePattern from '../../public/images/subtle-pattern.webp';
 import { FaUserTie, FaTools, FaCertificate } from 'react-icons/fa';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { motion } from 'framer-motion';
@@ -38,7 +40,6 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
     </motion.div>
   );
 }
-
 export default function IntroductionSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -46,8 +47,20 @@ export default function IntroductionSection() {
   });
 
   return (
-    <section ref={ref} className="bg-[#1e00ff67] py-16 bg-opacity-90 bg-[url('/images/subtle-pattern.png')] bg-repeat">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className="relative bg-[#1e00ff67] py-16 bg-opacity-90 overflow-hidden">
+      <Image
+        src={subtlePattern}
+        alt="Subtle pattern background"
+        fill
+        quality={100}
+        priority
+        sizes="100vw"
+        style={{
+          objectFit: 'cover',
+          zIndex: -1,
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}

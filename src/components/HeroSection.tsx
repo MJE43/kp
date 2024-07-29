@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import herosectionimage from '../../public/images/herosectionimage.webp';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   const [isMounted, setIsMounted] = useState<boolean>(false);
-  const { ref, inView } = useInView({
+  useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
@@ -43,13 +44,14 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <Image
-        src="/images/herosectionimage.jpg"
+        src={herosectionimage}
         alt="Electricians reviewing a construction site"
-        fill
-        style={{ objectFit: 'cover' }}
-        quality={100}
         priority
+        fill
         sizes="100vw"
+        quality={85}
+        placeholder="blur"
+        style={{ objectFit: 'cover' }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/70 to-transparent"></div>
       <div className="container mx-auto px-4 z-10">
