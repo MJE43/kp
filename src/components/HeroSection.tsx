@@ -34,7 +34,12 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
       <section className="bg-slate-900 py-16">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center bg-slate-100 rounded-lg shadow-md p-8">
-            {/* Placeholder content */}
+            <h1 className="text-4xl font-bold mb-4">K.P. Power</h1>
+            <p className="text-xl mb-4">Your Friendly Neighborhood Electrician in Tucson, Arizona</p>
+            <div className="space-y-2">
+              <div className="w-32 h-10 bg-gray-300 rounded"></div>
+              <div className="w-32 h-10 bg-gray-300 rounded"></div>
+            </div>
           </div>
         </div>
       </section>
