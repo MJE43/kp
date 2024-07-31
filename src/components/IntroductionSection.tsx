@@ -28,7 +28,7 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay }}
     >
-      <Card className="bg-blue-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+      <Card className="bg-blue-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
         <CardHeader>
           <div className="flex justify-center mb-4">{icon}</div>
           <CardTitle className="text-2xl font-semibold text-white">{title}</CardTitle>
