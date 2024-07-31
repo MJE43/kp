@@ -1,5 +1,26 @@
+// app/layout.tsx
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import { Playfair_Display, Roboto, Gelasio } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+});
+
+const noir = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-noir',
+});
+
+const gelasio = Gelasio({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-gelasio',
+});
 
 export const metadata: Metadata = {
   title: 'K.P. Power',
@@ -12,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${playfair.variable} ${noir.variable} ${gelasio.variable}`}>
       <body className="antialiased bg-gradient-to-br from-background-start to-background-end min-h-screen flex flex-col">
         <main className="flex-grow">
           {children}

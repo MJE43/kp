@@ -16,9 +16,9 @@ module.exports = {
         'text-dark': '#0F172A',
       },
       fontFamily: {
-        playfair: ['Playfair Display', 'serif'],
-        noir: ['Noir', 'sans-serif'],
-        georgia: ['Georgia', 'serif'],
+        playfair: ['var(--font-playfair)', 'serif'],
+        noir: ['var(--font-noir)', 'sans-serif'],
+        gelasio: ['var(--font-gelasio)', 'serif'],
       },
       fontSize: {
         'base': '16px',
