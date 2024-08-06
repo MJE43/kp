@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { WrenchScrewdriverIcon, LightBulbIcon, BoltIcon } from '@heroicons/react/24/outline';
+import ServiceCard from './ServiceCard';
 
 interface ServiceInfo {
   title: string;
@@ -43,7 +44,12 @@ export default function FeaturedServicesSection() {
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
-            <ServiceCard key={index} service={service} index={index} />
+            <ServiceCard 
+              key={index} 
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
           ))}
         </div>
         <div className="text-center">
@@ -55,26 +61,5 @@ export default function FeaturedServicesSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function ServiceCard({ service, index }: { service: ServiceInfo; index: number }) {
-  return (
-    <motion.div 
-      className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-    >
-      <motion.div 
-        className="mb-4 flex justify-center"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {service.icon}
-      </motion.div>
-      <h3 className="text-2xl font-semibold text-blue-900 mb-2 text-center">{service.title}</h3>
-      <p className="text-blue-800 text-base leading-relaxed text-center">{service.description}</p>
-    </motion.div>
   );
 }
