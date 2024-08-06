@@ -28,7 +28,7 @@ export default function AboutPage() {
       <div className="bg-darkest text-lightest">
         <header className="h-screen flex items-center justify-center relative p-20">
           <Image
-            src="/images/background-darkblue.jpg"
+            src="/images/sideview.webp"
             alt="Background Image"
             layout="fill"
             objectFit="cover"
@@ -66,7 +66,7 @@ export default function AboutPage() {
               <div className="w-full md:w-1/2 mb-10 md:mb-0">
                 <div className="relative h-[600px] rounded-lg overflow-hidden shadow-md">
                   <Image
-                    src="/images/bermix-studio-y9RGeKyVpM8-unsplash.jpg"
+                    src="/images/portrait.png"
                     alt="Electrician at work"
                     layout="fill"
                     objectFit="cover"

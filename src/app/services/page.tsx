@@ -20,14 +20,17 @@ const ServicesPage: NextPage = () => {
     <Layout>
       {/* Hero Section */}
       <div className="relative h-screen">
-        <Image
-          src="/images/night-stock-photo.jpg"
-          alt="Phoenix skyline at night"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-transparent opacity-75"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/images/van.png"
+            alt="Phoenix skyline at night"
+            fill
+            objectFit="cover"
+            quality={100}
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-transparent opacity-75"></div>
+        </div>
         <Particles
           id="tsparticles"
           init={particlesInit}
@@ -50,11 +53,11 @@ const ServicesPage: NextPage = () => {
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="text-center text-white">
+          <div className="text-center text-lightest">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-6xl font-bold mb-4"
+              className="text-6xl font-bold mb-4 text-brand"
             >
               Powering Phoenix's Future
             </motion.h1>
