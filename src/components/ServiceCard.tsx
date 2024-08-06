@@ -1,24 +1,25 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Zap } from 'lucide-react';
+import { IconType } from 'react-icons';
 
 interface ServiceCardProps {
-  service: string;
+  title: string;
+  description: string;
+  icon: IconType;
 }
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => (
-  <Card className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white 
-                   hover:scale-105 hover:bg-opacity-20 transition-all duration-300 
-                   shadow-lg hover:shadow-xl">
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon }) => (
+  <Card className="bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
     <CardHeader>
-      <div className="w-12 h-12 mb-4 mx-auto relative">
-        <Zap className="w-full h-full text-accent" />
-        <div className="absolute inset-0 bg-accent filter blur-md opacity-50" />
+      <div className="bg-blue-100 p-4 rounded-full mb-4 w-16 h-16 flex items-center justify-center mx-auto">
+        <Icon className="text-4xl text-blue-600" />
       </div>
-      <CardTitle className="text-xl font-semibold">{service} Services</CardTitle>
+      <CardTitle className="text-xl font-bold mb-3 text-blue-900">{title}</CardTitle>
     </CardHeader>
     <CardContent>
-      <p className="text-slate-100">Expert solutions for all your {service.toLowerCase()} electrical needs.</p>
+      <p className="text-gray-600 text-sm">{description}</p>
     </CardContent>
   </Card>
 );
+
+export default ServiceCard;
