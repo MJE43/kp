@@ -24,12 +24,13 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import Link from "next/link"
+import { BlogPost } from '../../lib/api';
 
 interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  // Add other fields as needed
+  content: string;
 }
 
 interface NavyBlogProps {
@@ -54,115 +55,33 @@ export function NavyBlog({ posts }: NavyBlogProps) {
       <div className="container grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-8 py-12 md:py-24 px-4 md:px-6">
         <div className="grid gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img
-                src="/placeholder.svg"
-                width={600}
-                height={400}
-                alt="Blog Post Image"
-                className="w-full h-48 object-cover"
-                style={{ aspectRatio: "600/400", objectFit: "cover" }}
-              />
-              <div className="p-4 space-y-2">
-                <h3 className="text-lg font-bold group-hover:text-yellow-300 transition-colors">
-                  The Importance of Proper Electrical Wiring
-                </h3>
-                <p className="text-yellow-300 line-clamp-2">
-                  Discover the critical role of proper electrical wiring in ensuring the safety and efficiency of your
-                  home or business.
-                </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center font-medium text-yellow-300 hover:underline"
-                  prefetch={false}
-                >
-                  Read More
-                  <ArrowRightIcon className="ml-1 w-4 h-4" />
-                </Link>
+            {posts.map((post) => (
+              <div key={post.slug} className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                <img
+                  src="/placeholder.svg"
+                  width={600}
+                  height={400}
+                  alt="Blog Post Image"
+                  className="w-full h-48 object-cover"
+                  style={{ aspectRatio: "600/400", objectFit: "cover" }}
+                />
+                <div className="p-4 space-y-2">
+                  <h3 className="text-lg font-bold group-hover:text-yellow-300 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-yellow-300 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center font-medium text-yellow-300 hover:underline"
+                  >
+                    Read More
+                    <ArrowRightIcon className="ml-1 w-4 h-4" />
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img
-                src="/placeholder.svg"
-                width={600}
-                height={400}
-                alt="Blog Post Image"
-                className="w-full h-48 object-cover"
-                style={{ aspectRatio: "600/400", objectFit: "cover" }}
-              />
-              <div className="p-4 space-y-2">
-                <h3 className="text-lg font-bold group-hover:text-yellow-300 transition-colors">
-                  Electrical Safety Tips for Homeowners
-                </h3>
-                <p className="text-yellow-300 line-clamp-2">
-                  Ensure the safety of your home by following these essential electrical safety tips.
-                </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center font-medium text-yellow-300 hover:underline"
-                  prefetch={false}
-                >
-                  Read More
-                  <ArrowRightIcon className="ml-1 w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img
-                src="/placeholder.svg"
-                width={600}
-                height={400}
-                alt="Blog Post Image"
-                className="w-full h-48 object-cover"
-                style={{ aspectRatio: "600/400", objectFit: "cover" }}
-              />
-              <div className="p-4 space-y-2">
-                <h3 className="text-lg font-bold group-hover:text-yellow-300 transition-colors">
-                  Upgrading to LED Lighting: Benefits and Considerations
-                </h3>
-                <p className="text-yellow-300 line-clamp-2">
-                  Explore the advantages of upgrading to energy-efficient LED lighting and what to consider during the
-                  process.
-                </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center font-medium text-yellow-300 hover:underline"
-                  prefetch={false}
-                >
-                  Read More
-                  <ArrowRightIcon className="ml-1 w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="group rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img
-                src="/placeholder.svg"
-                width={600}
-                height={400}
-                alt="Blog Post Image"
-                className="w-full h-48 object-cover"
-                style={{ aspectRatio: "600/400", objectFit: "cover" }}
-              />
-              <div className="p-4 space-y-2">
-                <h3 className="text-lg font-bold group-hover:text-yellow-300 transition-colors">
-                  The Future of Renewable Energy in the Electrical Industry
-                </h3>
-                <p className="text-yellow-300 line-clamp-2">
-                  Discover the latest trends and advancements in renewable energy and its impact on the electrical
-                  industry.
-                </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center font-medium text-yellow-300 hover:underline"
-                  prefetch={false}
-                >
-                  Read More
-                  <ArrowRightIcon className="ml-1 w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="bg-[#002e5d] rounded-lg p-6 space-y-6">

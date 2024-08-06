@@ -1,7 +1,22 @@
+import { Entry, EntryCollection } from 'contentful';
 import { contentfulClient } from './contentful';
 
-export async function getAllBlogPosts() {
-  const response = await contentfulClient.getEntries({
+interface BlogPostFields {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+}
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+};
+
+export async function getAllBlogPosts(): Promise<BlogPost[]> {
+  const response: EntryCollection<BlogPostFields> = await contentfulClient.getEntries({
     content_type: 'blogPost',
     order: '-sys.createdAt',
   });
@@ -10,12 +25,12 @@ export async function getAllBlogPosts() {
     slug: item.fields.slug,
     title: item.fields.title,
     excerpt: item.fields.excerpt,
-    // Add other fields as needed
+    content: item.fields.content,
   }));
 }
 
-export async function getBlogPostBySlug(slug: string) {
-  const response = await contentfulClient.getEntries({
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  const response: EntryCollection<BlogPostFields> = await contentfulClient.getEntries({
     content_type: 'blogPost',
     'fields.slug': slug,
     limit: 1,
@@ -28,6 +43,6 @@ export async function getBlogPostBySlug(slug: string) {
     slug: post.fields.slug,
     title: post.fields.title,
     content: post.fields.content,
-    // Add other fields as needed
+    excerpt: post.fields.excerpt,
   };
 }

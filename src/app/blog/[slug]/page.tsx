@@ -1,22 +1,27 @@
-import { getBlogPostBySlug, getAllBlogPosts } from '../../../lib/api';
+import { getBlogPostBySlug, getAllBlogPosts, BlogPost } from '../../../lib/api';
 import Layout from '../../../components/Layout';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export async function generateMetadata({ params }) {
+interface Params {
+  slug: string;
+}
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const post = await getBlogPostBySlug(params.slug);
   if (!post) return { title: 'Post Not Found' };
   return { title: post.title };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Params[]> {
   const posts = await getAllBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export default async function BlogPostPage({ params }) {
+export default async function BlogPostPage({ params }: { params: Params }) {
   const post = await getBlogPostBySlug(params.slug);
 
   if (!post) notFound();
