@@ -43,12 +43,13 @@ export default function FeaturedServicesSection() {
           Residential Electrical Services
         </motion.h2>
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
+        {services.map((service, index) => (
             <ServiceCard 
               key={index} 
               title={service.title}
               description={service.description}
               icon={service.icon}
+              isEven={index % 2 === 0}  // Add this line
             />
           ))}
         </div>

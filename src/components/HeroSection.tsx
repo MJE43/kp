@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import heroImage from '../../public/images/image (1).png';
+import heroImage from '../../public/images/newhero.jpeg';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
@@ -60,7 +60,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="flex items-center justify-center lg:justify-start mb-6"
             >
-              <Image src="/images/logo.webp" alt="K.P. Power Logo" width={80} height={80} className="mr-4" />
+              <Image src="/images/kpplogo.png" alt="K.P. Power Logo" width={80} height={80} className="mr-4" />
               <MotionH1 
                 className="text-5xl md:text-6xl font-extrabold text-lightest leading-tight font-sans"
                 initial={{ opacity: 0, y: -30 }}
