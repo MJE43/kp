@@ -74,7 +74,7 @@ const ServicesPage: NextPage = () => {
       <ServicesSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection backgroundColor="bg-light" />
+      <TestimonialsSection backgroundColor="bg-lightest" />
 
       {/* Enhanced CTA Section */}
       <EnhancedCTASection />
