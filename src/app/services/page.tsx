@@ -7,7 +7,7 @@ import Layout from '@/components/Layout';
 import { motion } from 'framer-motion';
 import Particles from "@tsparticles/react";
 import { loadFull } from "tsparticles";
-import ServicesSection from '@/components/ServicesSection';
+import { ServiceCarousel } from '@/components/service-carousel';
 import { TestimonialsSection } from '@/components/TestimonialsSection';
 import EnhancedCTASection from '@/components/EnhancedCTASection';
 
@@ -73,8 +73,8 @@ const ServicesPage: NextPage = () => {
         </div>
       </div>
 
-      {/* Services Section */}
-      <ServicesSection />
+      {/* Services Carousel Section */}
+      <ServiceCarousel />
 
       {/* Testimonials Section */}
       <TestimonialsSection backgroundColor="bg-lightest" />
