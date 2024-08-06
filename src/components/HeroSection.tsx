@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import herosectionimage from '../../public/images/herosectionimage.webp';
+import heroImage from '../../public/images/hero-image.jpeg';
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Button } from "@/components/ui/button";
@@ -49,7 +49,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <Image
-        src={herosectionimage}
+        src={heroImage}
         alt="Electricians reviewing a construction site"
         priority
         fill
