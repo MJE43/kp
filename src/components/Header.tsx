@@ -15,17 +15,17 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#0F172A] to-[#1E3A8A] text-white py-4 sm:py-6">
+    <header className="sticky top-0 z-50 bg-dark text-lightest py-4 sm:py-6">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-xl sm:text-2xl md:text-3xl font-bold text-white hover:opacity-80 transition-opacity duration-300">
+          <Link href="/" className="text-xl sm:text-2xl md:text-3xl font-bold text-brand hover:opacity-80 transition-opacity duration-300">
             K.P. Power
           </Link>
           <nav className="hidden md:block">
             <ul className="flex space-x-4 lg:space-x-8">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-white hover:opacity-80 transition-opacity duration-300 text-base lg:text-lg">
+                  <Link href={item.href} className="text-lightest hover:text-brand transition-colors duration-300 text-base lg:text-lg">
                     {item.name}
                   </Link>
                 </li>
@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           </nav>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-lightest focus:outline-none"
             aria-label="Toggle mobile menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className="block py-2 text-base text-white hover:opacity-80 transition-opacity duration-300"
+                  className="block py-2 text-base text-lightest hover:text-brand transition-colors duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

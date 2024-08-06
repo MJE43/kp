@@ -4,13 +4,12 @@
 
 @layer base {
   :root {
-    --color-primary: 30 58 138;
-    --color-secondary: 59 130 246;
-    --color-accent: 249 115 22;
-    --color-background-start: 15 23 42;
-    --color-background-end: 30 58 138;
-    --color-text-light: 255 255 255;
-    --color-text-dark: 15 23 42;
+    --color-brand: 246 220 59;
+    --color-darkest: 6 6 32;
+    --color-dark: 16 17 60;
+    --color-mid: 116 120 152;
+    --color-light: 218 220 235;
+    --color-lightest: 255 255 255;
   }
 
   html {
@@ -18,11 +17,11 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-background-start to-background-end text-text-light font-georgia text-base font-normal min-h-screen leading-relaxed;
+    @apply bg-darkest text-lightest font-georgia text-base font-normal min-h-screen leading-relaxed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair font-bold text-text-light leading-tight;
+    @apply font-playfair font-bold text-lightest leading-tight;
   }
 
   h1 { @apply text-3xl sm:text-4xl md:text-5xl mb-6; }
@@ -34,7 +33,7 @@
   }
 
   a {
-    @apply text-secondary hover:text-accent transition-colors duration-200 inline-block;
+    @apply text-brand hover:text-light transition-colors duration-200 inline-block;
   }
 
   p {

@@ -31,7 +31,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
   }, []);
 
   if (!isMounted) {
-    return <div className="h-screen bg-slate-900" />;
+    return <div className="h-screen bg-darkest" />;
   }
 
   return (
@@ -50,7 +50,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
           transition: 'transform 10s ease-out',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-[#0F172A]/70"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-darkest via-dark to-dark/70"></div>
       <div className="container mx-auto px-4 z-10 py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
@@ -58,19 +58,20 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex items-center justify-center lg:justify-start mb-6"
             >
-              <Image src="/logo.png" alt="K.P. Power Logo" width={100} height={100} className="mb-6 mx-auto lg:mx-0" />
+              <Image src="/images/logo.webp" alt="K.P. Power Logo" width={80} height={80} className="mr-4" />
+              <MotionH1 
+                className="text-5xl md:text-6xl font-extrabold text-lightest leading-tight font-sans"
+                initial={{ opacity: 0, y: -30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
+                K.P. Power
+              </MotionH1>
             </MotionDiv>
-            <MotionH1 
-              className="text-5xl md:text-6xl font-extrabold mb-4 text-white leading-tight font-sans"
-              initial={{ opacity: 0, y: -30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              K.P. Power
-            </MotionH1>
             <MotionP 
-              className="text-2xl md:text-3xl mb-8 text-[#FFA500] font-semibold"
+              className="text-2xl md:text-3xl mb-8 text-brand font-semibold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -86,7 +87,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               <Button
                 asChild
                 size="lg"
-                className="w-full bg-[#FFA500] hover:bg-[#FFB52E] text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+                className="w-full bg-brand hover:bg-brand/80 text-darkest font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
               >
                 <a href={`tel:${phoneNumber}`} aria-label="Call Kyle">
                   <Phone className="mr-2" size={20} />
@@ -97,7 +98,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
                 asChild
                 size="lg"
                 variant="outline"
-                className="w-full bg-white/10 hover:bg-white/20 text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center border-2 border-white"
+                className="w-full bg-lightest/10 hover:bg-lightest/20 text-lightest font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center border-2 border-lightest"
               >
                 <Link href="/contact" aria-label="Book a Free Consultation">
                   <Calendar className="mr-2" size={20} />
@@ -112,16 +113,16 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
             >
               <div className="flex flex-col items-center">
-                <Award className="text-[#FFA500] w-16 h-16 mb-2" />
-                <span className="text-white text-sm">Certified</span>
+                <Award className="text-brand w-16 h-16 mb-2" />
+                <span className="text-lightest text-sm">Certified</span>
               </div>
               <div className="flex flex-col items-center">
-                <Clock className="text-[#FFA500] w-16 h-16 mb-2" />
-                <span className="text-white text-sm">24/7 Service</span>
+                <Clock className="text-brand w-16 h-16 mb-2" />
+                <span className="text-lightest text-sm">24/7 Service</span>
               </div>
               <div className="flex flex-col items-center">
-                <Star className="text-[#FFA500] w-16 h-16 mb-2" />
-                <span className="text-white text-sm">Top Rated</span>
+                <Star className="text-brand w-16 h-16 mb-2" />
+                <span className="text-lightest text-sm">Top Rated</span>
               </div>
             </MotionDiv>
           </div>
@@ -130,20 +131,20 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
-              className="bg-white/10 p-8 rounded-lg"
+              className="bg-lightest/10 p-8 rounded-lg"
             >
-              <h2 className="text-3xl font-bold text-white mb-6">Our Services</h2>
-              <ul className="text-white space-y-4 text-lg">
-                <li className="flex items-center"><Home size={20} className="mr-2 text-[#FFA500]" /> Residential Electrical Repairs</li>
-                <li className="flex items-center"><Building size={20} className="mr-2 text-[#FFA500]" /> Commercial Electrical Services</li>
-                <li className="flex items-center"><Zap size={20} className="mr-2 text-[#FFA500]" /> Electrical Panel Upgrades</li>
-                <li className="flex items-center"><Lightbulb size={20} className="mr-2 text-[#FFA500]" /> Lighting Installation</li>
-                <li className="flex items-center"><Phone className="mr-2 text-[#FFA500]" /> 24/7 Emergency Services</li>
+              <h2 className="text-3xl font-bold text-lightest mb-6">Our Services</h2>
+              <ul className="text-lightest space-y-4 text-lg">
+                <li className="flex items-center"><Home size={20} className="mr-2 text-brand" /> Residential Electrical Repairs</li>
+                <li className="flex items-center"><Building size={20} className="mr-2 text-brand" /> Commercial Electrical Services</li>
+                <li className="flex items-center"><Zap size={20} className="mr-2 text-brand" /> Electrical Panel Upgrades</li>
+                <li className="flex items-center"><Lightbulb size={20} className="mr-2 text-brand" /> Lighting Installation</li>
+                <li className="flex items-center"><Phone className="mr-2 text-brand" /> 24/7 Emergency Services</li>
               </ul>
               <Button
                 asChild
                 size="lg"
-                className="mt-8 w-full bg-white text-[#0F172A] hover:bg-[#FFA500] hover:text-white font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="mt-8 w-full bg-lightest text-darkest hover:bg-brand hover:text-darkest font-bold rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 <Link href="/services" aria-label="Explore Our Services">
                   Explore Our Services
@@ -151,17 +152,17 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
               </Button>
             </MotionDiv>
             <MotionP 
-              className="text-white italic text-xl p-8 bg-[#FFA500]/20 rounded-lg relative"
+              className="text-lightest italic text-xl p-8 bg-brand/20 rounded-lg relative"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1, ease: "easeOut" }}
             >
-              <span className="text-6xl text-[#FFA500] absolute top-2 left-4">"</span>
+              <span className="text-6xl text-brand absolute top-2 left-4">"</span>
               <span className="font-bold text-2xl block mb-4">Kyle</span>
               I'm your local electrician. With over 15 years of
               experience, I'm here to solve all your electrical needs
               personally.
-              <span className="text-6xl text-[#FFA500] absolute bottom-2 right-4">"</span>
+              <span className="text-6xl text-brand absolute bottom-2 right-4">"</span>
             </MotionP>
           </div>
         </div>
@@ -172,7 +173,7 @@ export default function HeroSection({ phoneNumber }: HeroSectionProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 1.2, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
       >
-        <ChevronDown className="text-white" size={32} />
+        <ChevronDown className="text-lightest" size={32} />
       </MotionDiv>
     </section>
   );

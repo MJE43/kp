@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="sticky bottom-0 bg-blue-900 text-white py-4">
+    <footer className="sticky bottom-0 bg-dark text-lightest py-4">
       <div className="container mx-auto px-4 max-w-7xl">
         <motion.div 
           className="flex justify-between items-center"
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-light">
               &copy; {currentYear} KP Power and Electrical Services. All rights reserved.
             </p>
           </motion.div>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-white hover:text-orange-400 transition-colors duration-300"
+                    className="text-lightest hover:text-brand transition-colors duration-300"
                     asChild
                   >
                     <a
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
               <Button 
                 variant="link" 
                 asChild 
-                className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
+                className="p-0 h-auto text-lightest hover:text-brand transition-colors duration-300"
               >
                 <Link href="/contact">
                   Contact Us
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               <Button 
                 variant="link" 
                 asChild 
-                className="p-0 h-auto text-white hover:text-orange-400 transition-colors duration-300"
+                className="p-0 h-auto text-lightest hover:text-brand transition-colors duration-300"
               >
                 <Link href="/about">
                   About Us

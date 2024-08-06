@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
@@ -7,13 +8,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1E3A8A',
-        secondary: '#3B82F6',
-        accent: '#F97316',
-        'background-start': '#0F172A',
-        'background-end': '#1E3A8A',
-        'text-light': '#FFFFFF',
-        'text-dark': '#0F172A',
+        brand: "#F6DC3B",
+        darkest: "#060620",
+        dark: "#10113C",
+        mid: "#747898",
+        light: "#DADCEB",
+        lightest: "#FFFFFF"
       },
       fontFamily: {
         playfair: ['var(--font-playfair)', 'serif'],
@@ -64,4 +64,3 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-
