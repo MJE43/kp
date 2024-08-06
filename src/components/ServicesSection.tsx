@@ -57,10 +57,10 @@ const services: Service[] = [
 ];
 
 const ServicesSection: React.FC = () => (
-  <section className="py-20 bg-gradient-to-b from-dark to-darkest">
+  <section className="py-20 bg-light">
     <div className="container mx-auto px-4">
-      <h3 className="text-sm font-semibold text-center mb-2 text-brand uppercase tracking-wider">Our Services</h3>
-      <h2 className="text-4xl font-bold text-center mb-12 text-lightest">What We Offer</h2>
+      <h3 className="text-sm font-semibold text-center mb-2 text-darkest uppercase tracking-wider">Our Services</h3>
+      <h2 className="text-4xl font-bold text-center mb-12 text-darkest">What We Offer</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {services.map((service, index) => (
           <ServiceCard
@@ -68,11 +68,12 @@ const ServicesSection: React.FC = () => (
             title={service.title}
             description={service.description}
             icon={service.icon}
+            isEven={index % 2 === 0}
           />
         ))}
       </div>
       <div className="text-center mt-8">
-        <Button asChild>
+        <Button asChild className="bg-yellow-400 text-darkest hover:bg-yellow-500 font-semibold shadow-md hover:shadow-lg transition-all duration-300 h-12 px-6 py-3 text-base rounded-full">
           <Link href="/contact">
             Get a Free Quote
           </Link>
