@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
 import { Playfair_Display, Roboto, Gelasio } from 'next/font/google';
+import Head from './head';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -34,6 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${noir.variable} ${gelasio.variable}`}>
+      <Head />
       <body className="antialiased bg-gradient-to-br from-background-start to-background-end min-h-screen flex flex-col">
         <main className="flex-grow">
           {children}
