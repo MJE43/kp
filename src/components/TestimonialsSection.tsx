@@ -71,7 +71,11 @@ interface Testimonial {
   author: string;
 }
 
-export const TestimonialsSection = (): React.ReactElement => {
+interface TestimonialsSectionProps {
+  backgroundColor?: string;
+}
+
+export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ backgroundColor = 'bg-[#DADCEB]' }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const testimonials: Testimonial[] = [
     {
@@ -99,7 +103,7 @@ export const TestimonialsSection = (): React.ReactElement => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-20 bg-[#DADCEB]">
+    <section className={`py-20 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-5xl font-bold mb-12 text-center text-[#060620]"
