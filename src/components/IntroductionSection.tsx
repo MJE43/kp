@@ -9,44 +9,39 @@ import { useInView } from 'react-intersection-observer';
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 
-// Custom icons (replace with actual SVG paths)
+// Update the gradient for icons
+const iconGradient = (
+  <linearGradient id="iconGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+    <stop stopColor="#F6DC3B" />
+    <stop offset="1" stopColor="#F6DC3B" />
+  </linearGradient>
+);
+
+// Update icon components to use the new gradient
 const PersonalServiceIcon = () => (
   <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Replace with a more detailed personal service icon */}
-    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="url(#personalServiceGradient)" />
-    <defs>
-      <linearGradient id="personalServiceGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#F6DC3B" />
-        <stop offset="1" stopColor="#F6E85B" />
-      </linearGradient>
-    </defs>
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="url(#iconGradient)" />
+    {iconGradient}
   </svg>
 );
 
 const ExperienceIcon = () => (
   <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Replace with a more detailed experience icon */}
-    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="url(#experienceGradient)" />
-    <defs>
-      <linearGradient id="experienceGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#F6DC3B" />
-        <stop offset="1" stopColor="#F6E85B" />
-      </linearGradient>
-    </defs>
+    <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" fill="url(#iconGradient)" />
+    {iconGradient}
   </svg>
 );
 
 const CertifiedIcon = () => (
   <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Replace with a more detailed certified icon */}
-    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="url(#certifiedGradient)" />
-    <defs>
-      <linearGradient id="certifiedGradient" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#F6DC3B" />
-        <stop offset="1" stopColor="#F6E85B" />
-      </linearGradient>
-    </defs>
+    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="url(#iconGradient)" />
+    {iconGradient}
   </svg>
+);
+
+// Update the icon components to be slightly larger
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div className="w-20 h-20 mb-6 mx-auto">{children}</div>
 );
 
 interface FeatureCardProps {
@@ -54,9 +49,10 @@ interface FeatureCardProps {
   title: string;
   description: string;
   delay: number;
+  isAlternate: boolean;
 }
 
-function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
+function FeatureCard({ icon, title, description, delay, isAlternate }: FeatureCardProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -69,13 +65,13 @@ function FeatureCard({ icon, title, description, delay }: FeatureCardProps) {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay }}
     >
-      <Card className="bg-dark/50 backdrop-blur-md hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-none h-full">
-        <CardHeader>
-          <div className="flex justify-center mb-6">{icon}</div>
-          <CardTitle className="text-2xl font-bold text-brand mb-2">{title}</CardTitle>
+      <Card className={`${isAlternate ? 'bg-light' : 'bg-lightest'} transition-all duration-300 transform hover:scale-105 border border-gray-200 shadow-sm h-full`}>
+        <CardHeader className="text-center">
+          <IconWrapper>{icon}</IconWrapper>
+          <CardTitle className="text-2xl font-bold text-darkest mb-2">{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="text-light text-base leading-relaxed">{description}</p>
+        <CardContent className="text-center">
+          <p className="text-dark text-base leading-relaxed">{description}</p>
         </CardContent>
       </Card>
     </motion.div>
@@ -89,7 +85,7 @@ export default function IntroductionSection() {
   });
 
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden bg-gradient-to-br from-darkest via-dark to-dark">
+    <section ref={ref} className="relative py-32 overflow-hidden bg-lightest">
       <Image
         src={subtlePattern}
         alt="Subtle pattern background"
@@ -110,10 +106,10 @@ export default function IntroductionSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-lightest">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-darkest">
             Why Choose Kyle's <span className="text-brand text-5xl sm:text-6xl">Electrical Services?</span>
           </h2>
-          <p className="text-light text-xl max-w-3xl mx-auto">
+          <p className="text-dark text-xl max-w-3xl mx-auto">
             Experience the difference with our personalized, expert electrical solutions.
           </p>
         </motion.div>
@@ -123,18 +119,21 @@ export default function IntroductionSection() {
             title="Personal Service"
             description="Direct communication and service from Kyle himself, ensuring quality and accountability."
             delay={0.2}
+            isAlternate={true}
           />
           <FeatureCard
             icon={<ExperienceIcon />}
             title="15+ Years Experience"
             description="Extensive knowledge and expertise in residential electrical work since 2009."
             delay={0.4}
+            isAlternate={false}
           />
           <FeatureCard
             icon={<CertifiedIcon />}
             title="Licensed & Insured"
             description="Full peace of mind with professional guarantees and proper certifications."
             delay={0.6}
+            isAlternate={true}
           />
         </div>
         <motion.div
