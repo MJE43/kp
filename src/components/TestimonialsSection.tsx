@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface TestimonialCardProps {
   quote: string;
   author: string;
+  isEven: boolean;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, isEven }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -19,7 +20,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
       transition={{ type: "spring", stiffness: 300 }}
     >
       <Card 
-        className="bg-white bg-opacity-5 backdrop-blur-sm transition-all duration-300 hover:bg-opacity-10 border-2 border-orange-500 border-opacity-30"
+        className={`backdrop-blur-sm transition-all duration-300 border-2 border-[#F6DC3B] border-opacity-30 ${
+          isEven ? 'bg-[#F5F6FA]' : 'bg-[#DADCEB]'
+        }`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -32,7 +35,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
                 animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <Star className="text-orange-500 w-6 h-6 fill-current" />
+                <Star className="text-[#F6DC3B] w-6 h-6 fill-current" />
               </motion.div>
             ))}
           </div>
@@ -42,20 +45,20 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author }) => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="absolute -top-4 -left-2 text-6xl text-orange-500 opacity-30"
+            className="absolute -top-8 -left-4 text-8xl text-[#F6DC3B] opacity-30"
           >
             "
           </motion.div>
-          <p className="mb-4 text-gray-200 italic text-lg leading-relaxed relative z-10">{quote}</p>
+          <p className="mb-4 text-[#060620] italic text-lg leading-relaxed relative z-10">{quote}</p>
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="absolute -bottom-8 -right-2 text-6xl text-orange-500 opacity-30"
+            className="absolute -bottom-12 -right-4 text-8xl text-[#F6DC3B] opacity-30"
           >
             "
           </motion.div>
-          <CardTitle className="font-semibold text-orange-400">{author}</CardTitle>
+          <CardTitle className="font-semibold text-[#F6DC3B]">{author}</CardTitle>
         </CardContent>
       </Card>
     </motion.div>
@@ -96,10 +99,10 @@ export const TestimonialsSection = (): React.ReactElement => {
   }, [testimonials.length]);
 
   return (
-    <section className="py-20 bg-[#1E3A8A]">
+    <section className="py-20 bg-[#DADCEB]">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-5xl font-bold mb-12 text-center text-white"
+          className="text-5xl font-bold mb-12 text-center text-[#060620]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -116,7 +119,7 @@ export const TestimonialsSection = (): React.ReactElement => {
                 exit={{ opacity: 0, x: 50 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <TestimonialCard {...testimonial} />
+                <TestimonialCard {...testimonial} isEven={index % 2 === 0} />
               </motion.div>
             ))}
           </AnimatePresence>
