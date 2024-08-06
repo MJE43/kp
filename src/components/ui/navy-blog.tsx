@@ -25,7 +25,18 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 import Link from "next/link"
 
-export function NavyBlog() {
+interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  // Add other fields as needed
+}
+
+interface NavyBlogProps {
+  posts: BlogPost[];
+}
+
+export function NavyBlog({ posts }: NavyBlogProps) {
   return (
     <div className="bg-[#001d3d] text-yellow-300">
       <section className="w-full py-12 md:py-24 lg:py-32 border-b">
